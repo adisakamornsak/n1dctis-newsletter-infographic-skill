@@ -18,7 +18,7 @@
 - ย่อ/รวมประโยคซ้ำได้ แต่ห้ามเปลี่ยนคำปฏิเสธ (เช่น ยังไม่พร้อม → พร้อม), ความถี่, ขอบเขตหรือเงื่อนไข
 - ไม่สร้างจำนวนขั้นตอน 4 ข้อเพียงเพื่อให้เหมือนภาพตัวอย่าง; จำนวนกล่องขึ้นกับเนื้อหาจริง
 - ห้ามแปลง `OFC`, `ODF`, `Industrial Switch` หรือคำเทคนิคอื่นโดยไม่มีคำยืนยัน
-- ถ้าสื่อข้อความไม่ครบใน 1 หน้า ให้ทำเป็น 2 หน้าในดีไซน์เดียวกัน
+- Keep all required copy and images in one final PNG. When space is tight, condense without losing meaning, reduce decoration, reflow and enlarge the same canvas; never add pages or omit evidence.
 - ถ้าข้อความขัดแย้งในไฟล์ต่าง ๆ ให้แจ้งผู้ใช้ก่อนสรุป ไม่แก้ข้อมูลเอง
 
 ## กฎภาพ
@@ -56,18 +56,30 @@ Decorative digital/cyber art, PEA Watt-D, and icons may vary with story, but mus
 
 If `layout_choice` conflicts with the topic, prioritize the explicitly requested template while adapting unused infographic panels; never invent missing content to fit its shape.
 
-## Motto / slogan authorization (v2.1.1)
+## Motto / slogan authorization (retained from v2.1.1)
 
-- ห้ามสร้าง motto / คำขวัญ / สโลแกน / tagline / คำคมเอง ยกเว้นผู้ใช้สั่งให้แต่งสำหรับข่าวฉบับนั้นอย่างชัดเจน
-- หากต้นฉบับมี motto ให้ใช้ตรงตัว ห้ามแต่งใหม่หรือแก้ถ้อยคำ เว้นแต่ผู้ใช้สั่งให้แก้โดยตรง
-- หากไม่มี motto และไม่มีคำสั่งให้แต่ง ให้ละส่วนนี้ ไม่สร้างช่องว่างหรือถามหา motto เพิ่ม
-- AUTO, ข่าวสนุก, พื้นที่ว่าง และข้อความในภาพ reference ไม่ใช่การอนุญาตให้แต่ง
-- ครอบคลุมหัวเรื่องที่ใช้เป็นสโลแกน กล่องข้อความ แบนเนอร์ Caption คำพูด Watt-D ภาพพื้นหลัง และ Footer ห้ามซ่อน motto ที่แต่งเองเป็นหัวข้อสรุป
-- หัวข้อข่าวและบทสรุปตามข้อเท็จจริงยังเรียบเรียงได้ตามกฎเดิม เมื่อได้รับคำสั่งให้แต่ง motto ก็ห้ามเพิ่มข้อเท็จจริงหรืออ้างว่าเป็นคำขวัญทางการของ กฟภ.
+- Never invent a motto, slogan, tagline, catchphrase or inspirational sign-off without an explicit request for the current newsletter.
+- Preserve a supplied motto verbatim unless the user explicitly requests its revision.
+- If neither supplied wording nor a creation request exists, omit the element entirely; do not add a placeholder or ask for a motto by default.
+- AUTO, a fun tone, spare space and reference text do not authorize invention. Apply this rule to headings used as slogans, banners, captions, mascot speech bubbles, background text and the Footer.
+- Ordinary source-grounded titles and summaries remain allowed. Even an explicitly requested motto must not invent facts or be presented as the official PEA motto.
 
-| กรณี | พฤติกรรมที่ต้องได้ |
+| Input | Required behavior |
 | --- | --- |
-| ไม่มี motto / ปล่อย auto / ขอให้งานสนุก | ไม่แต่งและไม่เพิ่มส่วน motto |
-| ให้ motto มากับเนื้อหา | ใช้ข้อความเดิมตรงตัว |
-| สั่งให้แต่ง motto อย่างชัดเจน | แต่งตามคำสั่งเฉพาะฉบับนั้น |
-| ภาพ reference มี motto | ไม่คัดลอกมาใช้เอง |
+| No motto; AUTO or a request for a fun design | Omit the motto section; do not invent one |
+| User supplies a motto | Keep the exact wording |
+| User explicitly asks to create a motto for this issue | Create only within that request |
+| A reference image contains a motto | Do not reuse it as live news content |
+
+## Single-image contract (v2.2.0)
+
+- Accept any number of supplied news images with no template-defined image-count cap, including zero; actual upload, memory, pixel and export limits still apply.
+- Include every supplied news image in exactly one final static PNG, except images explicitly excluded by the user. Do not invent images when none were provided.
+- Assign each submitted news-image occurrence its own ID; preserve the order across batches. Do not silently deduplicate identical images or discard files with similar names.
+- Distinguish news images from reference layouts, the protected logo and mascot assets. Do not omit a news image by relabeling it as a reference. Report inaccessible/corrupt inputs rather than treating them as absent.
+- Record an image manifest with ID, filename, source role, inclusion/exclusion decision and final placement rectangle. Check expected IDs against placed IDs, not just counts.
+- Use contain placement without cropping, stretching, rounded clipping, recoloring, content edits, overlays or AI replacement. Native originals must remain unchanged.
+- Use an adaptive grid, gallery, collage or filmstrip; the example layouts do not prescribe a maximum photo count.
+- Reduce decoration, condense prose without losing locked facts, then reflow/enlarge the same canvas. A4 is not a mandatory limit. Keep screenshots and text usable at native resolution.
+- Check one file, one PNG frame, one header/footer and all required images before delivery. Never use pagination, animation or a ZIP of separate images as a workaround.
+- If real tool limits make the complete readable single PNG impossible in the current environment, report the blocker. Do not silently split, discard, crop or claim completion. Processing in batches is internal only; the final output is still one image.

@@ -53,7 +53,7 @@ This document tells the team how to select a layout. Every variant uses the same
 3. Decide mascot usage separately from the layout. A story may use the same layout with or without PEA Watt-D depending on tone.
 4. Choose the decorative background according to the story theme, not only the layout reference. The same layout can have a different backdrop when needed.
 5. When a series covers similar stories, rotate between compatible options and change the hero drawing/geometry, mascot placement, or background treatment, without changing brand constants or original attachments. Do not rely on memory of earlier issues unless the user provides them.
-6. If the source has a very small amount of text, minimize sections; if too much, add coordinated pages. Never invent content to match a gallery's shapes.
+6. If the source has a very small amount of text, minimize sections; if too much, reduce decoration, condense without losing meaning, reflow and enlarge the same canvas; do not add pages. Never invent content to match a gallery's shapes.
 7. Allow an original appropriate background image or icon set based on content. Pure decorative cyber/digital/friendly visuals may be generated; supplied photos and their pixels may not.
 
 ## Common restrictions on ALL five reference images
@@ -65,3 +65,7 @@ Permanent header: `กองเทคโนโลยีดิจิทัลแ�
 Permanent sub-header: `แผนกระบบสารสนเทศและความปลอดภัยไซเบอร์`
 
 Permanent footer: `การไฟฟ้าส่วนภูมิภาค เขต 1 ภาคเหนือ (จังหวัดเชียงใหม่)`
+
+## All five layouts: one-canvas adaptation (v2.2.0)
+
+Treat photo counts and aspect ratios in examples as illustrative, not binding. Accept any number of news images with no template-defined cap. All five styles must place every required image into one coherent static PNG. Use a hero plus adaptive gallery for small/medium sets, or modular grids/filmstrips on a taller canvas for larger sets. Keep one brand header and footer, not repeated page panels. Do not copy sample KPI values, infer unseen facts, invent a motto, or reduce screenshots to unreadable decorations. Follow `references/single-image-layout.md` relative to the skill root for manifest and capacity checks.

@@ -1,17 +1,17 @@
-# Original image assets - upload pending
+# Reference assets - retain the current repository files
 
-**สถานะ:** ไฟล์ PNG ทั้ง 7 รายการด้านล่างยังไม่ได้ถูกอัปโหลดในชุดข้อความนี้ ต้องเพิ่มจากชุด Skill v2.1 ต้นฉบับก่อนใช้งานจริง ห้ามสร้างภาพหรือโลโก้ทดแทนจากคำบรรยาย
+The inspected main snapshot `fd75db67a7a695b808564eb4dba19dfe6274cfbb` contains these seven PNGs:
 
-| ชื่อไฟล์ที่ต้องอยู่ในโฟลเดอร์นี้ | ใช้สำหรับ |
-|---|---|
-| `pea-logo-exact-original.png` | โลโก้ต้นฉบับและการทดสอบพิกเซล |
-| `original-newsletter-reference.png` | ภาพข่าวตัวอย่างต้นทาง |
-| `approved-layout-reference.png` | เลย์เอาต์ 01 |
-| `layout-02-digital-operations.png` | เลย์เอาต์ 02 |
-| `layout-03-cyber-shield.png` | เลย์เอาต์ 03 |
-| `layout-04-enterprise-analytics.png` | เลย์เอาต์ 04 |
-| `layout-05-cyber-ops-infrastructure.png` | เลย์เอาต์ 05 |
+- `original-newsletter-reference.png`
+- `approved-layout-reference.png`
+- `layout-02-digital-operations.png`
+- `layout-03-cyber-shield.png`
+- `layout-04-enterprise-analytics.png`
+- `layout-05-cyber-ops-infrastructure.png`
+- `pea-logo-exact-original.png`
 
-ตรวจ SHA-256 กับ `../../docs/source-skill-sha256.txt` หลังอัปโหลด และรันทดสอบใหม่ ชุดเต็มในเครื่องผ่านการทดสอบ 8 รายการ แต่ผลนั้นไม่ยืนยันว่าภาพอยู่บน repo แล้ว
+The v2.2.0 ready-to-commit update does not replace any of them. Keep the latest repository logo and reference assets when copying the updated text files. Do not delete or replace this whole folder with the update bundle.
 
-ไม่มีฟอนต์ Google Sans หรือไฟล์ Watt-D ทางการในชุดนี้ ภาพต้นแบบมีบุคคลและงานภายใน ต้องตรวจสิทธิ์เผยแพร่ก่อน ดู `../../docs/brand-assets.th.md`
+Use the reference layouts for composition only, not factual copy, stats, dates or substitute logos. The protected logo remains the separate original file. No official Watt-D artwork or font file is supplied. Follow the current asset owner's authorization and the brand rules.
+
+The short prompt is `newsletter-prompt.th.md`; it must remain identical to `prompts/newsletter-prompt.th.md` at repository root. `content-input-example.md` is an optional longer intake form. Neither form requires an invented motto or a fixed photo count.

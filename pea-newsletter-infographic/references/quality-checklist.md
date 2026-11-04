@@ -11,7 +11,7 @@
 - [ ] ทุกภาพรักษาสัดส่วน และเห็นเนื้อหาครบ ไม่มีภาพยืด
 - [ ] Layout ยึดตัวอย่าง สีม่วงทอง บรรทัดอ่านง่าย ระยะห่างพอดี
 - [ ] ตัวอักษรไทยไม่แตก ไม่ขาด เส้นวรรณยุกต์ไม่หลุด ไม่มีข้อความทับหรือหลุดขอบ
-- [ ] ถ้าเนื้อหายาว ใช้หน้าต่อ ไม่ลดขนาดข้อความจนอ่านไม่ออก
+- [ ] Dense content is reflowed into the same readable canvas; no pagination, silent omissions or illegibly small text.
 - [ ] ตรวจ final export 100% และดูหน้าจอมือถืออีกครั้ง
 
 ## v2.1 - mascot / background checks
@@ -27,12 +27,25 @@
 - [ ] If fonts could not be verified as Google Sans for every newly composed Thai glyph, that limitation is explicitly disclosed before delivery.
 - [ ] Style variation does not alter the required Thai header, sub-header, footer, exact PEA logo, or unchanged source images.
 
-## v2.1.1 - motto checks
+## Motto checks (retained from v2.1.1)
 
-- [ ] ไม่มี motto / slogan / tagline / คำขวัญ / คำคมที่แต่งใหม่ เว้นแต่ผู้ใช้สั่งโดยตรงสำหรับฉบับนี้
-- [ ] Motto ที่ผู้ใช้ให้คงข้อความเดิม เว้นแต่ผู้ใช้สั่งให้แก้
-- [ ] หากไม่มี motto และไม่มีคำสั่งให้แต่ง ต้องไม่มีส่วน motto หรือ placeholder
-- [ ] ตรวจหัวเรื่อง แบนเนอร์ Caption คำพูด Watt-D ภาพพื้นหลัง และ Footer ด้วย
-- [ ] ไม่ถือว่า AUTO, โทนสนุก หรือภาพ reference เป็นการอนุญาตให้แต่ง และไม่แฝงสโลแกนเป็นหัวข้อ
+- [ ] No newly created motto / slogan / tagline / catchphrase without an explicit request for this issue.
+- [ ] Supplied motto wording is verbatim unless its revision was requested.
+- [ ] Without supplied wording or authorization, there is no motto section or placeholder.
+- [ ] Inspect headings, banners, captions, Watt-D speech, background art and the Footer too.
+- [ ] AUTO, fun tone, reference text and empty space are not authorization; no slogan is disguised as a factual heading.
 
-Static tests ตรวจความสอดคล้องของคำสั่งเท่านั้น ไม่รับประกันพฤติกรรมของ AI หรือความถูกต้องของภาพที่ส่งออก ต้องตรวจชิ้นงานจริงเพิ่มเติม
+## Single-image checks (v2.2.0)
+
+- [ ] Accept news-image count without a template-defined cap; distinguish real tool capacity limits.
+- [ ] Inventory all accessible attachments and flag missing/corrupt files. No arbitrary subset or unapproved deduplication.
+- [ ] Every required news-image ID has a visible placement; exclusions have explicit user authorization.
+- [ ] Required IDs and placed IDs match, not merely their totals. Supporting logo/mascot/reference assets are classified separately.
+- [ ] Every source image is fully visible with proportional contain placement; no cropping, obscuring overlays, clipping or substitutions.
+- [ ] Expand the single canvas before sacrificing meaningful copy, locked numbers or screenshot readability. A4 is optional.
+- [ ] Exactly one final static PNG file with one frame, one header and one footer; no alternate pages, animation or separate image parts.
+- [ ] Inspect the whole composition and full-resolution detail; disclose any mobile zoom/scroll requirement.
+- [ ] Counts and dimensions are reported only after actual placement/export verification. Internal tiles are not user deliverables.
+- [ ] If capacity prevents a complete readable single image, report the limitation rather than presenting an incomplete result as finished.
+
+Static tests check instruction consistency, not actual AI behavior, font identity, photo placement or final-image fidelity. Inspect every real export separately.

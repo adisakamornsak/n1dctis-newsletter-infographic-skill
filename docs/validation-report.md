@@ -1,50 +1,50 @@
-# Validation report
+# Validation report - v2.2.0 ready-to-commit update
 
-Date: 2026-11-04
-Canonical skill: PEA Newsletter Infographic v2.1
-Repository: `adisakamornsak/n1dctis-newsletter-infographic-skill`
+## Baseline and scope
 
-## Publication scope
+- Inspected GitHub main ref: `fd75db67a7a695b808564eb4dba19dfe6274cfbb`.
+- Reconstructed the inspected main SKILL text and verified its Git blob SHA as `11f281f2fcaa5ec5c0184562a9c458249f5f8799` before applying the v2.2.0 edits.
+- Retained the explicit-only motto gate and the protected organization strings.
+- No remote branch, commit, pull request, merge, push or visibility change was made in this update.
+- No PNG asset, font or official mascot artwork is included or replaced by this update bundle.
 
-The text distribution is prepared for the requested repository. The seven original
-PNG files are not included in this remote text-only publication. See
-`../pea-newsletter-infographic/assets/README.md`. This is not a complete
-asset-inclusive installation. Original skill text and helper scripts are retained;
-publication documentation has been updated to disclose the missing assets.
+## Executed checks
 
-No font binaries, official Watt-D art, recent food-news photos, API keys, or
-credentials are included. No new license or repository visibility change is made.
+| Check | Result |
+| --- | --- |
+| Hosted skill-creator `quick_validate.py` | PASS |
+| Existing copy-helper tests (`CopyTests`) | 5 PASS |
+| Motto instruction-contract tests | 8 PASS |
+| Single-image instruction-contract tests | 13 PASS |
+| Local package-builder tests using temporary synthetic fixtures | 7 PASS |
+| Total selected unit tests | 33 PASS |
+| Short prompt | 29 lines, 1,703 Unicode code points |
+| Repository and bundled prompt | Identical bytes |
+| Old pagination fallback scan in active skill documents and prompt | PASS |
 
-## Local checks
+Commands run from the repository root:
 
-- The complete v2.1 source package preserves 17 canonical files byte-for-byte.
-- Skill frontmatter/name/description validation: PASS.
-- `python -m unittest discover -s tests -v` on the complete local package: 8 passed.
-- Original logo pixel preservation on a 1086 x 1536 PNG: PASS.
-- Wrong canvas size and out-of-bounds logo placement: correctly rejected.
-- Numeric preservation, changed numbers, duplicate fixed text, and Thai/Arabic
-  digit differences: tested.
-- Existing limitation that extra numeric tokens are not rejected: documented.
+```bash
+python -m unittest discover -s tests -k CopyTests -v
+python -m unittest discover -s tests -p test_motto_policy.py -v
+python -m unittest discover -s tests -p test_single_image_policy.py -v
+python -m unittest discover -s tests -p test_packaging.py -v
+```
 
-These results apply to the full local package, NOT proof that the remote assets
-are present. Logo tests require the missing original logo file. Rerun all tests
-on a fresh clone after restoring the seven assets. Compare the canonical files
-against `source-skill-sha256.txt`.
+## What these results do not establish
 
-## Not verified
+Text-contract tests verify that instructions are present and consistent; they do not prove an AI follows them. No newsletter was generated in this task. There was no end-to-end evaluation of arbitrary photo counts, real image placement, Google Sans/Thai shaping, real image fidelity, mobile readability or renderer limits.
 
-- End-to-end newsletter rendering on other AI hosts or design programs.
-- Google Sans availability, licensing, Thai glyph coverage, or font fallback.
-- Official Watt-D asset availability (no mascot file is supplied).
-- Public redistribution rights for logos, reference images, people, or brand art.
-- Visual quality of a newly rendered newsletter; this publication renders none.
+The latest remote logo was not available as a local binary. The remote Git blob is `6a809eb933f8e38ad32835db83efce23c7141811` (137,262 bytes); the older chat asset is different and was deliberately not substituted. Therefore the three existing real-logo tests were not rerun and a complete installable skill.zip was not produced in this session. The package builder correctly refused to package the staging folder when that required logo was absent.
 
-## Helper limitations
+The owner should run the complete suite against current repository assets before publishing. The unchanged `lock_logo.py` accepts a 1086x1536 canvas only; larger single canvases need another verified compositing path. Current asset dimensions must be checked. The unchanged copy checker does not reject every added number and is not a full factual or visual validator.
 
-`audit_copy.py` audits a text transcription, not image pixels or OCR. It checks
-fixed strings and retained source numeric-token counts. It does not reject every
-new number, prove numeric context/order/units, or validate fonts and photography.
+## Complete packaging using current local assets
 
-`lock_logo.py` pastes the packaged raster at its native size and checks the saved
-logo pixels. Reserve its placement area first. It can overwrite underlying
-content and is not a complete layout engine or brand-ownership validator.
+After applying the update to a complete repository checkout:
+
+```bash
+python tools/package_skill.py --output dist/skill.zip
+```
+
+The builder reads the actual current skill directory, requires the seven PNG assets and core files, preserves their bytes, rejects fonts and symbolic links, and verifies ZIP checksums. These are packaging checks, not image validation. Review all included content before sharing. It performs no Git or network operations.

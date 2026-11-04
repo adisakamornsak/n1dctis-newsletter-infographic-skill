@@ -1,0 +1,110 @@
+{
+  "version": "2.2.0",
+  "base_commit": "fd75db67a7a695b808564eb4dba19dfe6274cfbb",
+  "bundle_type": "complete-text-files-update-overlay",
+  "remote_changes_performed": false,
+  "image_assets_included": false,
+  "instructions": "Merge these files into the existing repository. Do not delete assets or substitute an old logo. Review any changes since base_commit.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 161,
+      "sha256": "735b5ecba27956b8eabd9bee05825db4c7aa53ceb369c4bdbea9f4f7574e0e3d"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1662,
+      "sha256": "3ea76d7531eab51f9d65f4d629aa5beba9183d2a0709045ca22e171967a04e98"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4038,
+      "sha256": "75e8f6d53321ee59002f2e28deea9b84acabd8043b43aca1feb202cfcfe8e393"
+    },
+    {
+      "path": "docs/update-v2.2.0.md",
+      "bytes": 4447,
+      "sha256": "e00656273888eac9bb973dfc07e95af0e5d21d7b975c9c7676bbb92204772f06"
+    },
+    {
+      "path": "docs/validation-report.md",
+      "bytes": 3128,
+      "sha256": "06e978a313c3fb0b42c413ae1b63d119d5abf09ccbca4e69f0d6a8d6f982e2d2"
+    },
+    {
+      "path": "pea-newsletter-infographic/SKILL.md",
+      "bytes": 18135,
+      "sha256": "f08d72578b56ebc7ad9343d6ed9cc3d87031766d66032c8738e630d5657e157a"
+    },
+    {
+      "path": "pea-newsletter-infographic/agents/openai.yaml",
+      "bytes": 173,
+      "sha256": "a2fc07de37094730fac7f8c1d0affa16f381f605de6ee4c1db5569c5c67b0638"
+    },
+    {
+      "path": "pea-newsletter-infographic/assets/README.md",
+      "bytes": 1166,
+      "sha256": "e79376999005ac72b35cd307bd01bdd965985eb87418ad2fa55015d5ec7ecf2e"
+    },
+    {
+      "path": "pea-newsletter-infographic/assets/content-input-example.md",
+      "bytes": 1926,
+      "sha256": "7e678ffbadf31e810e3d9d52d82f3386cf474c359084219577a20349ec9deb47"
+    },
+    {
+      "path": "pea-newsletter-infographic/assets/newsletter-prompt.th.md",
+      "bytes": 4085,
+      "sha256": "50a4b99a855c845fc3e292e12b93c2aca0536c0cab2c43bdb1c4ea2c7ef1c53f"
+    },
+    {
+      "path": "pea-newsletter-infographic/references/CHANGELOG.md",
+      "bytes": 3390,
+      "sha256": "a28c3164f624590668991d9b175973c1e0bbaf4c8683310b50fe540b69bc770a"
+    },
+    {
+      "path": "pea-newsletter-infographic/references/content-contract.md",
+      "bytes": 9209,
+      "sha256": "9b30a0ab29509060465ef51f6d65d533cf485566f9e654ada6b635eef1f468cc"
+    },
+    {
+      "path": "pea-newsletter-infographic/references/layout-catalog.md",
+      "bytes": 7974,
+      "sha256": "95902b22a5da363503addc3cb9ef8e42d103835ea6ef08a370c676e44c5c3aac"
+    },
+    {
+      "path": "pea-newsletter-infographic/references/quality-checklist.md",
+      "bytes": 5442,
+      "sha256": "935a282062d2890ca06fafc93be0871390a866d0850a65e2ad843d883c2bf68b"
+    },
+    {
+      "path": "pea-newsletter-infographic/references/single-image-layout.md",
+      "bytes": 5166,
+      "sha256": "8bd832e17c1000d0f32a708807157bc33e46b2749f104fed4c65cb03e0a5bf5a"
+    },
+    {
+      "path": "prompts/newsletter-prompt.th.md",
+      "bytes": 4085,
+      "sha256": "50a4b99a855c845fc3e292e12b93c2aca0536c0cab2c43bdb1c4ea2c7ef1c53f"
+    },
+    {
+      "path": "tests/test_motto_policy.py",
+      "bytes": 3639,
+      "sha256": "f3526179f32fc2bf16a2167c0ff70b81533ef44c3cf669a448d71045e0762312"
+    },
+    {
+      "path": "tests/test_packaging.py",
+      "bytes": 3499,
+      "sha256": "677557f55929e3ef8371c87fe2c18150d4e18fe1efc6549069315ab3f64caa85"
+    },
+    {
+      "path": "tests/test_single_image_policy.py",
+      "bytes": 4976,
+      "sha256": "795c4ac02aa67c8ea4df918a7a25a9b8df187ec58f4f5cf3780f222f60dcf6e8"
+    },
+    {
+      "path": "tools/package_skill.py",
+      "bytes": 5006,
+      "sha256": "2811fd97cd364e690f059d24dc4643b67082fedb6e468360d4b7303febfc1c83"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# Optional helper scripts and their tests only. No image model is included.
+Pillow

@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.1.1 - 2026-11-04
+
+- Prohibit newly invented mottos, slogans, taglines, catchphrases, and inspirational sign-offs unless explicitly requested by the user for the current newsletter.
+- Preserve supplied motto wording verbatim; omit empty motto panels rather than filling them from reference layouts.
+- Apply the rule to mascot speech, decorative backgrounds, headers, captions, banners, and footers as well as body copy.
+- Shorten the Thai prompt to a quick-fill form with automatic design defaults and a compact set of protected brand/content rules.
+- Bundle the same short prompt with the skill, and add instruction-contract regression tests. These tests check documentation consistency, not model behavior.
+
+
 ## v2.1 - 2026-11-03
 
 - Added support for optional use of the PEA Watt-D mascot as a decorative brand character in newsletters.

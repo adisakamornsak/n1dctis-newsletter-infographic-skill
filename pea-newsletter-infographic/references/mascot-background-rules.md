@@ -53,3 +53,9 @@ Choose a decorative backdrop that matches the main subject:
 - Analytics / KPI report → layout 04 + `digital` or `neutral`, mascot usually minimal or omitted
 - Network / infra ops → layout 05 + `field` or `digital`, mascot optional and small
 - Internal fun / lighthearted recap → any suitable layout + `festive` or custom playful background, mascot usually helpful
+
+## 6) Motto / slogan gate (v2.1.1)
+
+- Do not add motto, slogan, tagline, or inspirational copy to mascot speech bubbles, banners, icons, or background art unless the user explicitly asks to create that copy for the current newsletter.
+- Reuse a user-supplied motto verbatim unless its revision is explicitly requested. A friendly tone, AUTO mode, mascot inclusion, spare space, or reference image is not permission to invent one.
+- Without supplied wording or an explicit request, omit the motto element. Keep factual section headings and supplied news content separate from promotional slogans.

@@ -26,3 +26,13 @@
 - [ ] All attached screenshots are unmodified and unobscured, including numerical values already inside the screenshot.
 - [ ] If fonts could not be verified as Google Sans for every newly composed Thai glyph, that limitation is explicitly disclosed before delivery.
 - [ ] Style variation does not alter the required Thai header, sub-header, footer, exact PEA logo, or unchanged source images.
+
+## v2.1.1 - motto checks
+
+- [ ] ไม่มี motto / slogan / tagline / คำขวัญ / คำคมที่แต่งใหม่ เว้นแต่ผู้ใช้สั่งโดยตรงสำหรับฉบับนี้
+- [ ] Motto ที่ผู้ใช้ให้คงข้อความเดิม เว้นแต่ผู้ใช้สั่งให้แก้
+- [ ] หากไม่มี motto และไม่มีคำสั่งให้แต่ง ต้องไม่มีส่วน motto หรือ placeholder
+- [ ] ตรวจหัวเรื่อง แบนเนอร์ Caption คำพูด Watt-D ภาพพื้นหลัง และ Footer ด้วย
+- [ ] ไม่ถือว่า AUTO, โทนสนุก หรือภาพ reference เป็นการอนุญาตให้แต่ง และไม่แฝงสโลแกนเป็นหัวข้อ
+
+Static tests ตรวจความสอดคล้องของคำสั่งเท่านั้น ไม่รับประกันพฤติกรรมของ AI หรือความถูกต้องของภาพที่ส่งออก ต้องตรวจชิ้นงานจริงเพิ่มเติม

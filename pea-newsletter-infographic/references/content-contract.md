@@ -55,3 +55,19 @@ Optional field: `background_direction: auto | cyber | digital | field | awarenes
 Decorative digital/cyber art, PEA Watt-D, and icons may vary with story, but must remain separate from original attached photos and screenshots. Do not read source statistics/dates from the four new concept designs.
 
 If `layout_choice` conflicts with the topic, prioritize the explicitly requested template while adapting unused infographic panels; never invent missing content to fit its shape.
+
+## Motto / slogan authorization (v2.1.1)
+
+- ห้ามสร้าง motto / คำขวัญ / สโลแกน / tagline / คำคมเอง ยกเว้นผู้ใช้สั่งให้แต่งสำหรับข่าวฉบับนั้นอย่างชัดเจน
+- หากต้นฉบับมี motto ให้ใช้ตรงตัว ห้ามแต่งใหม่หรือแก้ถ้อยคำ เว้นแต่ผู้ใช้สั่งให้แก้โดยตรง
+- หากไม่มี motto และไม่มีคำสั่งให้แต่ง ให้ละส่วนนี้ ไม่สร้างช่องว่างหรือถามหา motto เพิ่ม
+- AUTO, ข่าวสนุก, พื้นที่ว่าง และข้อความในภาพ reference ไม่ใช่การอนุญาตให้แต่ง
+- ครอบคลุมหัวเรื่องที่ใช้เป็นสโลแกน กล่องข้อความ แบนเนอร์ Caption คำพูด Watt-D ภาพพื้นหลัง และ Footer ห้ามซ่อน motto ที่แต่งเองเป็นหัวข้อสรุป
+- หัวข้อข่าวและบทสรุปตามข้อเท็จจริงยังเรียบเรียงได้ตามกฎเดิม เมื่อได้รับคำสั่งให้แต่ง motto ก็ห้ามเพิ่มข้อเท็จจริงหรืออ้างว่าเป็นคำขวัญทางการของ กฟภ.
+
+| กรณี | พฤติกรรมที่ต้องได้ |
+| --- | --- |
+| ไม่มี motto / ปล่อย auto / ขอให้งานสนุก | ไม่แต่งและไม่เพิ่มส่วน motto |
+| ให้ motto มากับเนื้อหา | ใช้ข้อความเดิมตรงตัว |
+| สั่งให้แต่ง motto อย่างชัดเจน | แต่งตามคำสั่งเฉพาะฉบับนั้น |
+| ภาพ reference มี motto | ไม่คัดลอกมาใช้เอง |

@@ -26,3 +26,5 @@ Layout choice (optional): 01 / 02 / 03 / 04 / 05 / auto
 Subject theme (optional): general / digital-operations / cyber-safety / enterprise-analytics / cyber-ops-infrastructure
 Decorative background/icon preference (optional):
 Do you want verified numeric KPI cards? Include the exact source and units for every KPI; otherwise no KPI cards.
+
+Motto / คำขวัญ (ไม่ต้องกรอกเพิ่ม): ใช้จากเนื้อหาต้นฉบับตรงตัว หากไม่มีให้ละส่วนนี้ ห้ามแต่งเอง เว้นแต่ผู้ใช้ระบุคำสั่งให้แต่งไว้ในข้อกำชับเพิ่มเติมอย่างชัดเจน

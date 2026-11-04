@@ -1,6 +1,6 @@
 # PEA Newsletter Infographic - N1 DCTIS
 
-**Skill v2.2.0 - one final image, all supplied news images**
+**Skill v2.3.0 - 1440x2560 portrait PNG, all supplied news images**
 
 Use this instruction bundle and its Thai prompt with a compatible assistant or a manual design workflow. It is not an image generator, web app or automatic newsletter renderer. No model, API key, Google Sans font file or official Watt-D artwork is included.
 
@@ -8,9 +8,9 @@ Use this instruction bundle and its Thai prompt with a compatible assistant or a
 
 1. Copy [the short Thai prompt](prompts/newsletter-prompt.th.md), fill the five input fields and provide all source images.
 2. Make the complete [skill folder](pea-newsletter-infographic/SKILL.md) and required assets readable to the tool you use. A prompt is not a native installation by itself.
-3. Deliver exactly one final static PNG containing every required news image. A4 is only an optional starting proportion, not a page limit.
+3. Deliver exactly one final static PNG containing every required news image. Output width is 1440 pixels and height is 2560 pixels, portrait 9:16. The long edge is vertical; 2560x1440 in width-by-height order would be landscape.
 
-There is no template-defined image-count cap. Actual attachment, memory, pixel, font and export limits still apply. Reduce decoration, reflow the image grid and enlarge the same canvas rather than silently omitting images, shrinking screenshots beyond readability or splitting pages. See the [single-image rules](pea-newsletter-infographic/references/single-image-layout.md).
+There is no template-defined image-count cap. Actual attachment, memory, pixel, font and export limits still apply. Reduce decoration, reflow the image grid within the fixed dimensions rather than silently omitting images, shrinking screenshots beyond readability or splitting pages. Report a capacity conflict if all content cannot fit readably; do not change dimensions. See the [single-image rules](pea-newsletter-infographic/references/single-image-layout.md).
 
 ## Brand and source protection
 
@@ -33,7 +33,7 @@ python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
 ```
 
-Documentation-contract tests check instructions only, not generated images or AI behavior. Existing helpers are not a full renderer. `lock_logo.py` is fixed to 1086x1536 and must not be used to force larger canvases back to that size. Check the actual logo dimensions before using it. The copy checker also has known limitations. See [validation report](docs/validation-report.md).
+Documentation-contract tests check instructions only, not generated images or AI behavior. Existing helpers are not a full renderer. `lock_logo.py` now requires a 1440x2560 canvas. `scripts/validate_output.py` checks PNG encoding, dimensions, single-frame output and orientation without resizing. Check the actual logo dimensions before using it. The copy checker also has known limitations. See [validation report](docs/validation-report.md).
 
 ## Package the full skill using current repository assets
 
@@ -43,4 +43,4 @@ python tools/package_skill.py --output dist/skill.zip
 
 This builds the complete skill folder from local repository files without downloading or changing any assets. It refuses missing required files, fonts and symbolic links. The archive is a distribution bundle, not a multi-image newsletter output. Inspect it before sharing. It does not commit, push, merge, or change repository visibility.
 
-For this update's file list and local-commit steps, see [the update guide](docs/update-v2.2.0.md). For other hosts, see [usage guidance](docs/usage-with-other-tools.th.md). Read the [changelog](pea-newsletter-infographic/references/CHANGELOG.md) for version history.
+For the preceding update's local-commit steps, see [the historical v2.2.0 guide](docs/update-v2.2.0.md). For the current geometry checks, see [validation](docs/validation-report.md). For other hosts, see [usage guidance](docs/usage-with-other-tools.th.md). Read the [changelog](pea-newsletter-infographic/references/CHANGELOG.md) for version history.

@@ -42,9 +42,10 @@ class SingleImagePolicyTests(unittest.TestCase):
                 with self.subTest(phrase=phrase):
                     self.assertNotIn(phrase.lower(), text.lower())
 
-    def test_canvas_expands_and_a4_is_not_mandatory(self):
-        self.assertIn('A4-like proportions are a starting preference, not a hard limit', self.skill)
-        self.assertIn('increase canvas dimensions', self.guide)
+    def test_canvas_is_fixed_portrait(self):
+        self.assertIn('Fix the output to exactly 1440x2560 px (width x height), portrait 9:16', self.skill)
+        self.assertIn('Set width=1440 and height=2560 pixels', self.guide)
+        self.assertIn('report the capacity conflict', self.guide)
 
     def test_manifest_checks_ids_not_counts_only(self):
         self.assertIn('every required news-image ID must appear', self.skill)
@@ -78,11 +79,11 @@ class SingleImagePolicyTests(unittest.TestCase):
             self.assertIn(f'| {n:02d} |', self.skill)
 
     def test_logo_helper_limits_are_disclosed(self):
-        self.assertIn('existing helper is fixed to 1086x1536', self.skill)
+        self.assertIn('helper requires a 1440x2560 canvas', self.skill)
         self.assertIn('never crop or rescale a newly supplied logo', self.skill.lower())
 
     def test_short_prompt_is_current_and_single_image(self):
-        self.assertIn('v2.2.0', self.prompt)
+        self.assertIn('v2.3.0', self.prompt)
         self.assertLessEqual(len(self.prompt), 1800)
         self.assertLessEqual(len(self.prompt.splitlines()), 30)
         self.assertIn('\u0e23\u0e27\u0e21\u0e17\u0e38\u0e01\u0e2d\u0e22\u0e48\u0e32\u0e07\u0e43\u0e19\u0e20\u0e32\u0e1e\u0e40\u0e14\u0e35\u0e22\u0e27', self.prompt)

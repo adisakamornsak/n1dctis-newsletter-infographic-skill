@@ -50,8 +50,8 @@ class MottoPolicyTests(unittest.TestCase):
 
     def test_bundled_prompt_matches_repository_prompt(self):
         self.assertEqual(self.prompt, read(SKILL / 'assets/newsletter-prompt.th.md'))
-        self.assertIn('v2.2.0', self.prompt)
-        self.assertIn('(team edition v2.2.0)', self.skill)
+        self.assertIn('v2.3.0', self.prompt)
+        self.assertIn('(team edition v2.3.0)', self.skill)
 
     def test_prompt_retains_all_three_protected_organization_lines(self):
         # Read the immutable constants from the existing audit helper, not from

@@ -18,7 +18,7 @@
 - ย่อ/รวมประโยคซ้ำได้ แต่ห้ามเปลี่ยนคำปฏิเสธ (เช่น ยังไม่พร้อม → พร้อม), ความถี่, ขอบเขตหรือเงื่อนไข
 - ไม่สร้างจำนวนขั้นตอน 4 ข้อเพียงเพื่อให้เหมือนภาพตัวอย่าง; จำนวนกล่องขึ้นกับเนื้อหาจริง
 - ห้ามแปลง `OFC`, `ODF`, `Industrial Switch` หรือคำเทคนิคอื่นโดยไม่มีคำยืนยัน
-- Keep all required copy and images in one final PNG. When space is tight, condense without losing meaning, reduce decoration, reflow and enlarge the same canvas; never add pages or omit evidence.
+- Keep all required copy and images in one final PNG. When space is tight, condense without losing meaning, reduce decoration, reflow within the fixed 1440x2560 portrait canvas; never add pages or omit evidence.
 - ถ้าข้อความขัดแย้งในไฟล์ต่าง ๆ ให้แจ้งผู้ใช้ก่อนสรุป ไม่แก้ข้อมูลเอง
 
 ## กฎภาพ
@@ -71,15 +71,15 @@ If `layout_choice` conflicts with the topic, prioritize the explicitly requested
 | User explicitly asks to create a motto for this issue | Create only within that request |
 | A reference image contains a motto | Do not reuse it as live news content |
 
-## Single-image contract (v2.2.0)
+## Single-image contract (v2.3.0)
 
 - Accept any number of supplied news images with no template-defined image-count cap, including zero; actual upload, memory, pixel and export limits still apply.
-- Include every supplied news image in exactly one final static PNG, except images explicitly excluded by the user. Do not invent images when none were provided.
+- Include every supplied news image in exactly one final static PNG at 1440x2560 px (width x height), portrait 9:16, except images explicitly excluded by the user. Do not invent images when none were provided.
 - Assign each submitted news-image occurrence its own ID; preserve the order across batches. Do not silently deduplicate identical images or discard files with similar names.
 - Distinguish news images from reference layouts, the protected logo and mascot assets. Do not omit a news image by relabeling it as a reference. Report inaccessible/corrupt inputs rather than treating them as absent.
 - Record an image manifest with ID, filename, source role, inclusion/exclusion decision and final placement rectangle. Check expected IDs against placed IDs, not just counts.
 - Use contain placement without cropping, stretching, rounded clipping, recoloring, content edits, overlays or AI replacement. Native originals must remain unchanged.
 - Use an adaptive grid, gallery, collage or filmstrip; the example layouts do not prescribe a maximum photo count.
-- Reduce decoration, condense prose without losing locked facts, then reflow/enlarge the same canvas. A4 is not a mandatory limit. Keep screenshots and text usable at native resolution.
-- Check one file, one PNG frame, one header/footer and all required images before delivery. Never use pagination, animation or a ZIP of separate images as a workaround.
-- If real tool limits make the complete readable single PNG impossible in the current environment, report the blocker. Do not silently split, discard, crop or claim completion. Processing in batches is internal only; the final output is still one image.
+- Reduce decoration, condense prose without losing locked facts, then reflow within the same fixed canvas. Do not expand it, swap width and height, or substitute A4. Keep screenshots and text usable at native resolution.
+- Check one file, one PNG frame, exactly 1440x2560 pixels, one header/footer and all required images before delivery. Never use pagination, animation or a ZIP of separate images as a workaround.
+- If real tool limits or fixed-size capacity make the complete readable single PNG impossible in the current environment, report the blocker. Do not silently split, discard, crop or claim completion. Processing in batches is internal only; the final output is still one image.

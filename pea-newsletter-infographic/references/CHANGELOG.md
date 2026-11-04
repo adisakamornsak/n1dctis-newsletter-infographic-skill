@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.3.0 - 2026-11-04
+
+- Fix final output to one static PNG at width=1440 and height=2560 px, portrait 9:16. Interpret the requested long edge as vertical; width=2560/height=1440 is landscape.
+- Replace the previous canvas-expansion fallback throughout active guidance and both prompts. Reflow within the fixed canvas; report conflicts without omitting images, splitting pages or claiming completion.
+- Update the logo helper canvas size; preserve existing image assets and logo pixels.
+- Add an actual PNG geometry validator and tests for size, format, frame count and orientation. These do not prove font identity, news-image completeness or real newsletter quality.
+
 ## v2.2.0 - 2026-11-04
 
 - Remove any template-defined cap on supplied news images; require all images unless explicitly excluded by the user.

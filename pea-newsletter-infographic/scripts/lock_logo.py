@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Paste unmodified original PEA-logo pixels on a 1086x1536 PNG."""
+"""Paste unmodified original PEA-logo pixels on a 1440x2560 PNG."""
 from argparse import ArgumentParser
 from pathlib import Path
 from PIL import Image
 
-CANVAS = (1086, 1536)
+CANVAS = (1440, 2560)
 DEFAULT_POS = (50, 17)
 
 def apply_logo(src: Path, dst: Path, logo_path: Path, pos=DEFAULT_POS):

@@ -19,7 +19,7 @@ REQUIRED = (
     'references/layout-catalog.md', 'references/mascot-background-rules.md',
     'references/quality-checklist.md', 'references/single-image-layout.md',
     'assets/content-input-example.md', 'assets/newsletter-prompt.th.md',
-    'scripts/audit_copy.py', 'scripts/lock_logo.py',
+    'scripts/audit_copy.py', 'scripts/lock_logo.py', 'scripts/validate_output.py',
 ) + tuple('assets/' + name for name in ASSET_NAMES)
 FONT_EXTENSIONS = {'.ttf', '.otf', '.ttc', '.woff', '.woff2', '.eot'}
 ALLOWED_EXTENSIONS = {'.md', '.txt', '.py', '.yaml', '.yml', '.json', '.png', '.jpg', '.jpeg', '.svg', '.webp'}

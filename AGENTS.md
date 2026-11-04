@@ -6,8 +6,7 @@ prompt at `prompts/newsletter-prompt.th.md` is a copy-and-paste entrypoint for
 assistants that do not load skills. Do not claim native skill execution on a host
 that only reads plain text.
 
-Keep the canonical skill folder intact. The distribution adds documentation but
-does not silently change v2.1. Do not treat the illustrative template dates,
+Keep the canonical skill folder intact. Keep the version, short prompt and QA contract consistent with every authorized change. Do not treat the illustrative template dates,
 percentages, scenes, logos, or people as event evidence.
 
 Do not regenerate the logo or user photos. Use only verified original Watt-D
@@ -19,3 +18,10 @@ The helper scripts are not a complete renderer. Read `docs/validation-report.md`
 for tested behavior and gaps. Do not automatically upload inputs, publish assets,
 create remote branches, or change repository visibility. Publishing requires an
 explicit user request and an authenticated, authorized write channel.
+
+For v2.2.0, accept any number of required news images without a template-defined
+cap and produce exactly one final static PNG. Real tool limits still apply.
+Never solve overcrowding by pagination or omissions. Keep the explicit-only
+motto gate and both short-prompt copies synchronized. Run instruction-contract
+checks and report what they do not verify. Never substitute an older local logo
+for the asset currently maintained by the repository owner.

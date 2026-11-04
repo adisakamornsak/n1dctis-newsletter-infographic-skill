@@ -1,5 +1,15 @@
 # Changelog
 
+## v2.2.0 - 2026-11-04
+
+- Remove any template-defined cap on supplied news images; require all images unless explicitly excluded by the user.
+- Require exactly one final static PNG with one frame, one header and one footer. Remove earlier multi-page fallbacks from the skill, content contract, layout catalog, QA and prompt.
+- Add image-manifest, adaptive contain-grid, canvas-expansion, readability and real tool-capacity checks. Unbounded input policy is not a claim of infinite tool capacity.
+- Preserve the explicit-only motto rule, exact department copy, original-photo/logo rules, Google Sans requirement and all five layout styles.
+- Keep the quick-fill prompt short and synchronize its repository and bundled copies.
+- Add instruction-contract tests and a local package builder that uses current repository assets rather than replacing them with older copies.
+- This distribution is a ready-to-commit local update; it does not publish, merge, or claim to render a newsletter automatically.
+
 ## v2.1.1 - 2026-11-04
 
 - Prohibit newly invented mottos, slogans, taglines, catchphrases, and inspirational sign-offs unless explicitly requested by the user for the current newsletter.

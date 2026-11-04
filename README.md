@@ -1,78 +1,46 @@
 # PEA Newsletter Infographic - N1 DCTIS
 
-ชุด Skill, Prompt และคู่มือสำหรับทำจดหมายข่าวภาษาไทยของแผนระบบสารสนเทศและความปลอดภัยไซเบอร์ ใช้เป็นแนวทางกับเครื่องมืออื่นได้ ไม่ต้องมีบัญชี ChatGPT เพื่ออ่านหรือใช้คำสั่ง
+**Skill v2.2.0 - one final image, all supplied news images**
 
-**Skill v2.1 | เผยแพร่ชุดข้อความ: 2026-11-04**
+Use this instruction bundle and its Thai prompt with a compatible assistant or a manual design workflow. It is not an image generator, web app or automatic newsletter renderer. No model, API key, Google Sans font file or official Watt-D artwork is included.
 
-> **สถานะ:** ชุดคำสั่ง คู่มือ และสคริปต์พร้อมอ่านใน repo แล้ว แต่ยังขาดภาพ PNG ต้นฉบับ 7 ไฟล์ ดู [รายการภาพที่ต้องเพิ่ม](pea-newsletter-infographic/assets/README.md) ก่อนผลิตงานจริง การ clone repo ตอนนี้ยังไม่ได้ชุด Skill ครบภาพ อย่าสร้างโลโก้หรือภาพทดแทนเอง
+## Start here
 
-> ชุดนี้ไม่ใช่เว็บแอปหรือตัวสร้างภาพอัตโนมัติ ไม่มีโมเดลสร้างภาพ API key ฟอนต์ หรือไฟล์ Watt-D ทางการ และยังไม่ได้ทดสอบกระบวนการผลิตครบทุกเครื่องมือ
+1. Copy [the short Thai prompt](prompts/newsletter-prompt.th.md), fill the five input fields and provide all source images.
+2. Make the complete [skill folder](pea-newsletter-infographic/SKILL.md) and required assets readable to the tool you use. A prompt is not a native installation by itself.
+3. Deliver exactly one final static PNG containing every required news image. A4 is only an optional starting proportion, not a page limit.
 
-## เริ่มใช้
+There is no template-defined image-count cap. Actual attachment, memory, pixel, font and export limits still apply. Reduce decoration, reflow the image grid and enlarge the same canvas rather than silently omitting images, shrinking screenshots beyond readability or splitting pages. See the [single-image rules](pea-newsletter-infographic/references/single-image-layout.md).
 
-1. เปิด [Prompt ภาษาไทย](prompts/newsletter-prompt.th.md) แล้วคัดลอกไปยังเครื่องมือที่ใช้งาน
-2. กรอกข่าว วันที่ เลย์เอาต์ มาสคอต และพื้นหลัง แนบภาพจริงและไฟล์ต้นฉบับที่เครื่องมือนั้นอ่านได้
-3. ให้เครื่องมืออ่าน [SKILL.md](pea-newsletter-infographic/SKILL.md) และ [รายการตรวจงาน](pea-newsletter-infographic/references/quality-checklist.md)
+## Brand and source protection
 
-เครื่องมือที่รองรับ Skills ต้องใช้โฟลเดอร์ `pea-newsletter-infographic/` ทั้งชุดพร้อมไฟล์ภาพที่ยังขาด ไม่ใช่เฉพาะชื่อ Skill อ่าน [วิธีใช้กับเครื่องมืออื่น](docs/usage-with-other-tools.th.md)
+Keep the original logo at the top left, original news images uncropped and unobscured, exact numbers and names, purple/gold CI, and verified Google Sans for newly composed text. Do not invent a motto unless explicitly asked for the current issue. Preserve supplied motto wording. Watt-D requires verified source artwork.
 
-## เลย์เอาต์
+Header: กองเทคโนโลยีดิจิทัลและการสื่อสาร
+Sub-header: แผนกระบบสารสนเทศและความปลอดภัยไซเบอร์
+Footer: การไฟฟ้าส่วนภูมิภาค เขต 1 ภาคเหนือ (จังหวัดเชียงใหม่)
 
-| แบบ | ชื่อ | เหมาะกับ |
-|---|---|---|
-| 01 | Chiang Mai Classic | ข่าวทั่วไป กิจกรรม งานภาคสนาม |
-| 02 | Digital Operations | ระบบสารสนเทศ Dashboard แพลตฟอร์ม |
-| 03 | Cyber Shield | ความปลอดภัยไซเบอร์และการให้ความรู้ |
-| 04 | Enterprise Analytics | ระบบองค์กร การวิเคราะห์ และ KPI จริง |
-| 05 | Cyber Ops & Infrastructure | เครือข่าย สื่อสาร โครงสร้างพื้นฐาน |
+Choose layout 01 (general), 02 (digital operations), 03 (cyber awareness), 04 (analytics) or 05 (network/infrastructure), or leave all design controls on AUTO. See [layout catalog](pea-newsletter-infographic/references/layout-catalog.md), [content rules](pea-newsletter-infographic/references/content-contract.md), [mascot/background rules](pea-newsletter-infographic/references/mascot-background-rules.md), and [QA](pea-newsletter-infographic/references/quality-checklist.md).
 
-เลือก `auto` ได้ เปลี่ยนพื้นหลังตามข่าว และใช้ Watt-D เมื่อมีไฟล์ต้นฉบับที่ตรวจสอบได้ ดู [กฎมาสคอตและพื้นหลัง](pea-newsletter-infographic/references/mascot-background-rules.md)
+## Assets and distribution
 
-## ข้อกำหนดที่ต้องรักษา
+The inspected repository main snapshot contains seven PNG assets. This ready-to-commit update intentionally replaces no PNG, logo, font or mascot file. Keep your current `pea-newsletter-infographic/assets/` files. Reference mockups are art direction, not verified story facts or font/logo proof. Review [brand asset guidance](docs/brand-assets.th.md) before further distribution.
 
-โลโก้ต้องใช้ไฟล์ต้นฉบับวางมุมซ้ายบน ไม่สร้างใหม่ ภาพข่าวต้องเห็นครบ ไม่ครอป รีทัช หรือวาดทับ ตัวเลข วันที่ ชื่อเฉพาะ และความหมายต้องคงเดิม ใช้ CI ม่วง-ทอง และ Google Sans จริงสำหรับข้อความใหม่ทั้งหมด หากตรวจสอบฟอนต์ไม่ได้ต้องแจ้ง ห้ามใช้ฟอนต์อื่นแทนเงียบ ๆ
-
-**Header:** กองเทคโนโลยีดิจิทัลและการสื่อสาร
-
-**Sub-header:** แผนกระบบสารสนเทศและความปลอดภัยไซเบอร์
-
-**Footer:** การไฟฟ้าส่วนภูมิภาค เขต 1 ภาคเหนือ (จังหวัดเชียงใหม่)
-
-ภาพตัวอย่างเป็นเพียงแนวทางองค์ประกอบ ไม่ใช่ข้อมูลข่าวหรือหลักฐานว่าใช้ฟอนต์และโลโก้ถูกต้อง ห้ามคัดลอกวันที่ สถิติ หรือฉากสมมติมาเป็นข้อมูลจริง
-
-## โครงสร้าง
-
-```text
-README.md
-AGENTS.md
-prompts/newsletter-prompt.th.md
-docs/
-pea-newsletter-infographic/
-  SKILL.md
-  agents/
-  references/
-  scripts/
-  assets/  # ยังต้องเพิ่ม PNG ต้นฉบับ 7 ไฟล์
-requirements.txt
-tests/test_helpers.py
-```
-
-## สคริปต์ช่วยตรวจ
+## Tests
 
 ```bash
 python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
 ```
 
-ชุดเต็มที่มีภาพต้นฉบับผ่านการทดสอบพื้นฐาน 8 รายการแล้ว แต่ repo ที่ยังขาดภาพโลโก้จะรันการทดสอบส่วนโลโก้ไม่ครบ ต้องเพิ่มภาพก่อน อ่าน [ผลทดสอบและข้อจำกัด](docs/validation-report.md)
+Documentation-contract tests check instructions only, not generated images or AI behavior. Existing helpers are not a full renderer. `lock_logo.py` is fixed to 1086x1536 and must not be used to force larger canvases back to that size. Check the actual logo dimensions before using it. The copy checker also has known limitations. See [validation report](docs/validation-report.md).
+
+## Package the full skill using current repository assets
 
 ```bash
-python pea-newsletter-infographic/scripts/lock_logo.py input.png output.png
-python pea-newsletter-infographic/scripts/audit_copy.py --source content_source.txt --final final_transcription.txt
+python tools/package_skill.py --output dist/skill.zip
 ```
 
-สคริปต์ไม่ใช่ตัวจัดหน้า ไม่ตรวจฟอนต์หรือภาพทั้งหมด และตัวตรวจข้อความยังไม่ปฏิเสธตัวเลขที่เพิ่มใหม่ทุกกรณี ต้องตรวจด้วยสายตา
+This builds the complete skill folder from local repository files without downloading or changing any assets. It refuses missing required files, fonts and symbolic links. The archive is a distribution bundle, not a multi-image newsletter output. Inspect it before sharing. It does not commit, push, merge, or change repository visibility.
 
-## ภาพและสิทธิ์
-
-อ่าน [ข้อมูลทรัพย์สินแบรนด์](docs/brand-assets.th.md) และ [วิธีเติมไฟล์ภาพ](docs/publish-to-github.th.md) ไม่รวมภาพอาหารหรือข่าวส่วนตัวจากแชท ไม่รวมฟอนต์และไฟล์มาสคอตทางการ ไม่เพิ่มใบอนุญาตหรือเปลี่ยนสถานะ repo แทนเจ้าของงาน ภาพต้นแบบมีบุคคลและงานภาคสนาม เจ้าของ repo ต้องตรวจสิทธิ์ก่อนนำขึ้นสาธารณะ
+For this update's file list and local-commit steps, see [the update guide](docs/update-v2.2.0.md). For other hosts, see [usage guidance](docs/usage-with-other-tools.th.md). Read the [changelog](pea-newsletter-infographic/references/CHANGELOG.md) for version history.

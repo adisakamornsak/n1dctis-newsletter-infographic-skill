@@ -15,3 +15,4 @@ local-fonts/
 *.otf
 *.woff
 *.woff2
+dist/

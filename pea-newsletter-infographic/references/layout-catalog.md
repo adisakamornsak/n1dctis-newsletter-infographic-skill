@@ -21,5 +21,6 @@
 - ถ้าผู้ใช้เลือกเลย์เอาต์ให้ยึดตามนั้น
 - ถ้าไม่เลือก ให้ auto-select จากลักษณะข่าว
 - ภาพตัวอย่างเลย์เอาต์เป็นเพียง art direction ไม่ใช่แหล่งข้อมูลจริง
-- เมื่อภาพเยอะ ให้ใช้ gallery / collage / grid / filmstrip ที่ยังอ่านภาพออกได้จริงภายใน 1440x2560
-- เมื่อเนื้อหาน้อยหรือมีพื้นที่ว่าง ให้เพิ่ม background, hero illustration, icon cluster หรือ decorative motif ที่สอดคล้องกับข่าว แทนการปล่อยพื้นที่ขาวโล้น
+- เมื่อภาพเยอะ ให้ใช้ gallery / collage / grid / filmstrip หรือ **bento grid** ที่ยังอ่านภาพออกได้จริงภายใน 1440x2560
+- Bento grid สามารถใช้ช่องภาพหลายขนาดผสมกัน และให้ crop-to-fill เพื่อให้ภาพเต็มกรอบโดยไม่มีช่องว่างจากสัดส่วนภาพที่ต่างกัน
+- เมื่อเนื้อหาน้อยหรือมีพื้นที่ว่าง ให้เพิ่ม background, hero illustration, icon cluster, decorative motif หรือ generated filler graphics ที่สอดคล้องกับข่าว แทนการปล่อยพื้นที่ขาวโล้น

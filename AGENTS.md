@@ -19,9 +19,4 @@ for tested behavior and gaps. Do not automatically upload inputs, publish assets
 create remote branches, or change repository visibility. Publishing requires an
 explicit user request and an authenticated, authorized write channel.
 
-For v2.3.0, accept any number of required news images without a template-defined
-cap and produce exactly one final static PNG at 1440x2560 px (width x height), portrait 9:16. Do not enlarge the canvas or swap dimensions. Real tool limits and fixed-size readability still apply.
-Never solve overcrowding by pagination or omissions. Keep the explicit-only
-motto gate and both short-prompt copies synchronized. Run instruction-contract
-checks and report what they do not verify. Never substitute an older local logo
-for the asset currently maintained by the repository owner.
+For v2.4.0, accept any number of required news images without a template-defined cap and produce exactly one final JPG/JPEG at 1440x2560 px, portrait. Bento-grid photo layouts may crop-to-fill, scale, zoom and reposition images while preserving important subjects and avoiding distortion. Generate story-matched backgrounds and supporting visuals to avoid excessive plain white empty areas. Never solve overcrowding by pagination or omissions. Keep the explicit-only motto gate and both short-prompt copies synchronized. Never substitute an older local logo for the asset currently maintained by the repository owner.

@@ -1,41 +1,38 @@
 ---
 name: pea-newsletter-infographic
-description: Create and update Thai PEA newsletter infographics for the digital technology, information systems and cybersecurity team. Trigger on PEA internal newsletters, activity updates, cyber awareness campaigns, IT operations reports, system integration, dashboards, monitoring, communications, and field work. Offer five distinct purple-and-gold layouts (classic, digital operations, cyber shield, enterprise analytics, cyber operations), optionally incorporate the PEA Watt-D mascot, and allow the decorative background to change according to the story theme, while protecting the exact original PEA logo, department header, sub-header, footer, all user-supplied photos, numeric values, and Google Sans-only typography. Support selecting a named style or auto-selecting from content, accept any number of supplied news images without a template-defined cap, and compose all content into one final static PNG at exactly 1440x2560 px (width x height), portrait 9:16, rather than multiple pages.
+description: Create Thai PEA newsletter infographics for the digital technology, information systems, and cybersecurity team. Use when producing or updating internal PEA newsletter graphics from Thai source text and user-supplied images. Enforce the exact PEA logo placement, exact department header/sub-header/footer, Google Sans-only typography, unchanged user photos, unchanged numeric data, optional PEA Watt-D mascot, and five reusable purple/gold layouts. Accept any number of supplied news images, keep everything in one final portrait image, and deliver exactly one compressed JPG at 1440x2560 pixels rather than PNG. Also generate story-matched backgrounds or supporting artwork so the page does not feel plain or excessively empty.
 ---
 
-# PEA Newsletter Infographic (team edition v2.3.0)
+# PEA Newsletter Infographic (team edition v2.3.2)
 
-Create professional Thai newsletters following the PEA purple/gold visual identity. Support **five layouts** rather than duplicating one design. Read [layout catalog](references/layout-catalog.md) for style selection, composition, and asset locations, plus [mascot/background rules](references/mascot-background-rules.md) for how to use PEA Watt-D and theme-based backdrops. Use visual references for **art direction only**: their sample text, dates, metrics, pictures, and generated/illustrated logos are NOT verified event data or final deliverable assets.
+Create professional Thai newsletters following the PEA purple/gold visual identity. Support **five layouts** rather than duplicating one design. Read [layout catalog](references/layout-catalog.md) for style selection, composition, and art-direction patterns, [mascot/background rules](references/mascot-background-rules.md) for PEA Watt-D and backdrops, and [single-image layout rules](references/single-image-layout.md) before planning the page.
 
 ## Non-negotiable constraints
 
-1. **Exact PEA logo**: use `assets/pea-logo-exact-original.png` as an unchanged image. Do not redraw, regenerate, recolor, distort, edit, crop within, or replace it with an AI approximation. Keep it at upper left with sufficient clear space. Composite the original logo AFTER generating any art/background. Its internal lettering belongs to the protected raster; no need to retype it.
+1. **Exact PEA logo**: if the bundled original logo asset is available, use it unchanged. Never redraw, regenerate, recolor, distort, edit, or replace the logo with an AI approximation. Keep it at upper left with adequate clear space.
 2. **Exact top header**: `กองเทคโนโลยีดิจิทัลและการสื่อสาร`.
 3. **Exact line immediately below header**: `แผนกระบบสารสนเทศและความปลอดภัยไซเบอร์`.
-4. **Exact footer**: `การไฟฟ้าส่วนภูมิภาค เขต 1 ภาคเหนือ (จังหวัดเชียงใหม่)`. Do not repeat department lines in footer. Preserve these three strings character-for-character.
-5. **Google Sans only**: use a verified, authorized, Thai-capable Google Sans font for ALL newly composed text, captions, labels, icons-with-letters, numbers, charts, headers, and footer. No fallback or "Google Sans-like" substitute. Do not redistribute font files. If this exact font cannot render all Thai glyphs, flag the blocker and do not claim strict compliance; request access to a legally licensed compatible installation.
-6. **Numbers are locked**: do not invent, alter, round, translate digits, convert units, recalculate, omit, or replace dates, times, percentages, quantities, prices, sequence numbers, IDs, and technical specifications from the supplied content. No example statistics or dates from reference images in a live newsletter. A numbered step list is permitted only if the user's source documents contain those steps and their order.
-7. **User images are locked; no template-defined image-count cap**: accept any number of supplied news images, including zero, and reuse all required photos, diagrams, screenshots, and supplied graphics, not AI approximations; never re-imagine, retouch, recolor, erase, crop away, or place illustrations/text/icons over any part of them. Keep the aspect ratio with `contain` and letterboxing/padding rather than cropping. Preserve source originals unchanged in the project.
-8. **Meaning is locked**: shorten Thai prose without changing meaning, chronology, uncertainties, names, technical terms, or coverage. Never fabricate project completion, security incidents, results, metrics, field workers, or institutional claims. If content is crowded, reduce decoration, condense prose without losing meaning or locked data, reflow the grid within the fixed 1440x2560 canvas. Never drop required images or facts, split pages, or shrink content below usable readability.
-9. **PEA Watt-D is optional but brand-sensitive**: when requested, or when it clearly improves a friendly internal newsletter, use PEA Watt-D only as a decorative or guiding mascot. If an official mascot asset/reference is available, preserve its identity, colors, proportions, facial expression style, and signature features. Do not parody, deform, turn into another character, or let the mascot dominate the page more than the headline/content.
-10. **Background may change by story theme**: choose or create a decorative background aligned with the news content (for example cyber, digital systems, field operations, awareness campaign, celebration, internal lifestyle/fun, or mixed IT content). Backgrounds must remain secondary, readable, and non-factual. Do not imply an unverified location, event, incident, or device state through the backdrop.
-
-11. **Never invent a motto without an explicit user request**: do not create a motto, slogan, tagline, catchphrase, or inspirational sign-off unless the user explicitly asks to create it for the current newsletter. This covers Thai คำขวัญ, สโลแกน, คำคม and equivalent text in any language, including headlines used as slogans, banners, captions, mascot speech bubbles, background art, and footers. Preserve any user-supplied motto verbatim unless the user explicitly requests its revision. If no motto is supplied and creation is not explicitly requested, omit the motto block entirely; do not add a placeholder or ask for a motto by default. AUTO mode, a fun/creative tone, spare space, reference imagery, and quoted text inside source material are not permission to invent one. Keep ordinary factual headings and summaries grounded in the source; do not re-label an invented slogan as a heading. Even when creation is requested, do not invent factual claims or present the result as an official PEA motto.
-
-12. **Exactly one final static PNG**: combine all required news copy and images in one coherent infographic. Do not deliver multiple pages, slides, separate image parts, an animated/multi-frame PNG, or a collage of repeated page headers. Use one header and one footer. Fix the output to exactly 1440x2560 px (width x height), portrait 9:16. The requested 2560-by-1440 dimensions are oriented with the long edge vertical; 2560x1440 in width-by-height order would be landscape. Do not enlarge the canvas, swap dimensions, rotate the completed page, or use an A4 fallback. Reference-gallery slots never cap the number of news images.
-13. **Respect real tool limits without silently changing the task**: no template-defined image-count cap does not remove upload, memory, pixel, or export limits. Check those limits and the input manifest before rendering. If they prevent a readable complete single image, report the blocker and do not present a partial, cropped, tiny, or split result as complete. Internal batching is allowed only when every batch is assembled into the same final PNG.
+4. **Exact footer**: `การไฟฟ้าส่วนภูมิภาค เขต 1 ภาคเหนือ (จังหวัดเชียงใหม่)`.
+5. **Google Sans only**: use a verified Thai-capable Google Sans installation for all newly composed text. Do not claim compliance if a fallback font is used.
+6. **Numbers are locked**: never invent, alter, round, or omit user-supplied dates, percentages, quantities, IDs, or technical specifications.
+7. **User images are locked and unlimited in count**: accept any number of supplied news images, including zero. Reuse all required photos, screenshots, diagrams, and graphics exactly; do not crop, retouch, recolor, regenerate, or cover them with decorative elements. Use proportional contain placement only.
+8. **Meaning is locked**: shorten Thai prose only when meaning, chronology, names, uncertainties, and technical terms remain unchanged.
+9. **PEA Watt-D is optional but brand-sensitive**: use only as a secondary decorative helper when requested or clearly appropriate.
+10. **Background and supporting graphics should match the story**: actively create or select decorative backgrounds, hero illustrations, icons, and graphic motifs that match the news content so the page feels rich and intentional rather than blank. Backgrounds must remain non-factual, secondary to the content, and readable. Avoid leaving large plain white empty areas unless the content density truly requires negative space for readability.
+11. **Never invent a motto without an explicit user request**: do not create any motto, slogan, tagline, catchphrase, banner phrase, or inspirational sign-off unless the user explicitly asks for it in the current newsletter. Preserve a supplied motto verbatim unless revision is explicitly requested.
+12. **Exactly one final static JPG/JPEG**: deliver exactly one final static image at **1440 × 2560 pixels** in **portrait orientation**. Do not paginate, split into multiple images, animate, or rotate. Do not substitute PNG, PDF, or PPTX as the final deliverable.
+13. **JPEG output discipline**: export as a high-quality JPG/JPEG with an opaque background (no transparency). Keep compression high enough for readable Thai text and screenshots, then verify that readability survives the compression.
+14. **No silent task changes**: if all required content cannot fit readably within 1440 × 2560 without violating the locked rules, report the conflict. Do not resize the canvas, split pages, omit required images, or claim completion.
 
 ## Input / output contract
 
-- Accept original Thai copy or documents, heading, dates, key points, any number of supplied news images in specified order, and optional layout choice (1-5) or references. The user may provide all data piecemeal.
-- Optional controls may include `layout_choice`, `subject_focus`, `mascot_usage: auto | include | omit`, and `background_direction: auto | cyber | digital | field | awareness | festive | neutral | custom description`.
-- Default deliverable: exactly one final static PNG. Set width=1440 and height=2560 pixels (portrait, 9:16). Design directly for these dimensions. This fixed-size rule replaces v2.2.0 canvas expansion. Reflow cards and condense repetitive prose without losing facts; if readable full inclusion is impossible, report the fixed-size capacity conflict without changing the dimensions or claiming completion. Do not deliver PDF/PPTX, extra pages, parts, or alternate versions as substitutes for the one requested image.
-- Treat logo, mascot and layout-reference files as supporting assets, not news-photo gallery entries. Keep an ordered image manifest for all supplied news images, marking only explicit user exclusions. Do not deduplicate or select a subset without permission.
+- Accept Thai source copy, dates, headings, key points, and any number of supplied news images in the user’s order.
+- Optional controls: `layout_choice`, `subject_focus`, `mascot_usage: auto | include | omit`, `background_direction: auto | cyber | digital | field | awareness | festive | neutral | custom description`.
+- Default deliverable: **one final JPG/JPEG only**, 1440 × 2560 px, portrait, RGB, opaque background.
+- Treat layout references, logos, and mascot assets as supporting assets, not as report images.
 - If content has not yet been provided, supply only a template/preview rather than invented news.
-- No external connector is required: use user attachments. Additional original-looking background art, PEA Watt-D (when appropriate), and context-appropriate *decorative icons* are allowed, provided they do not tamper with the logo or supplied images, and do not purport to depict an unverified event.
-- Keep every layout's upper-left PEA logo, exact header/sub-header and footer, and the purple/gold identity constant; vary hero illustration, card grid, timelines, infographic modules, photo positions, mascot usage, background style, and accent composition.
 
-## Select one of five visual layouts
+## Five layout options
 
 | Option | Short name | Best use |
 | --- | --- | --- |
@@ -45,48 +42,35 @@ Create professional Thai newsletters following the PEA purple/gold visual identi
 | 04 | Enterprise Analytics | System integration, applications, service improvement, verified KPIs |
 | 05 | Cyber Ops & Infrastructure | Network operations, SOC, monitoring, communications, fiber, security infrastructure |
 
-See `references/layout-catalog.md` for all five files and detailed visual patterns. Respect an explicit user style choice. Otherwise auto-select the best match, explaining the chosen option briefly. When making a series for a team, rotate appropriate layouts to avoid repetitive composition; never select a mismatched theme solely for variety. If actual source data has no verified KPIs or steps, omit those modules even when a reference example displays them. The four new mockups are *not* ready-to-publish templates because their imagery/text may be synthetic.
+Respect an explicit style choice. Otherwise auto-select the best match from the story.
 
 ## Production workflow
 
-Read [single-image layout rules](references/single-image-layout.md) before planning the canvas.
-
-1. Open `references/content-contract.md`, `references/layout-catalog.md`, `references/mascot-background-rules.md`, and `references/quality-checklist.md`. Inspect only the relevant reference images plus `assets/original-newsletter-reference.png` when needed; do not copy placeholder claims.
-2. Extract and lock exact user-supplied numbers, dates, identifiers, names, quoted wording, image count and image order. Identify verified source content for each intended block. Record any user-supplied motto verbatim and any explicit current request to create one; without that request, do not generate a motto.
-3. Select layout 01-05 based on request and material. Decide whether PEA Watt-D should appear (`include`, `omit`, or `auto`) and define the decorative background direction from the story theme. Plan actual modules: headline, date if known, concise summary, main visual, verified highlights/steps, related information, and attachments. Unused panels should disappear; do not fill with fabricated data. Map every required news-image ID to a placement on one canvas. Use an adaptive gallery, collage, filmstrip, or grid instead of a fixed number of photo slots.
-4. Create or source *separate decorative* hero/backdrop artwork for the selected theme, if useful. Add PEA Watt-D only as a separate decorative layer when appropriate. Do not put the logo or source images through generative image editing. Do not use any entire reference mockup as the final content background because the mockup already contains synthetic writing and imagery.
-5. Compose text in true Google Sans, insert supplied images as uncropped `contain` placements, and paste the *exact original logo file* in the upper-left after decorative generation. Add the three protected text strings exactly. The final production file should be text/layout composed, not a single AI-generated image with unreliable spellings/fonts/logos. Resize source photos only proportionally with contain placement; preserve the whole image, including corners, without overlap or decorative clipping. Reduce decoration and reflow within 1440x2560; never make evidence-bearing screenshots or text illegible to force a fit.
-6. On the 1440x2560 PNG use `python scripts/lock_logo.py input.png output.png` (or `--x`/`--y` for a different but fixed location, with enough clear space) as the final logo-integrity pass. The helper requires a 1440x2560 canvas and never scales the page or logo. Check the original logo native size, clear space and bounds; never crop or rescale a newly supplied logo merely to satisfy the helper. If it cannot fit, report the asset conflict.
-7. Transcribe all readable final text to `final_transcription.txt` and run `python scripts/audit_copy.py --source content_source.txt --final final_transcription.txt`. Manually compare numerals, especially Thai dates and chart labels. Source should include supplied report text, not numeric data from reference mockups.
-8. Confirm exactly one output file and one PNG frame. Run `python scripts/validate_output.py output.png` to verify PNG encoding, exactly 1440x2560 pixels and unrotated portrait orientation; this validates geometry, not typography or photo inclusion. Compare the manifest to actual placements: every required news-image ID must appear, with no substitution, omission, unapproved deduplication, overlap, or cropping. Inspect both the full composition and 100% zoom; the portrait image may require zooming on a phone. Visually inspect the exported image: logo exact, all original images represented and uncropped, no synthetic photo passed off as real, mascot usage consistent with brief, background aligned with content but not distracting, correct Thai typography, no fallback fonts, enough contrast, no overflow, all locked terms correct, and no unauthorized motto anywhere (including background art, banners, captions, mascot speech bubbles, or footer). If verification is unavailable, disclose the limitation rather than asserting compliance.
-9. Deliver only the single final PNG as the newsletter artifact. Briefly report the layout, mascot decision, background, final pixel dimensions, and required-versus-placed news-image counts only after verification. Keep intermediate tiles, individual photos, manifests and previews internal unless explicitly requested. For team reuse, include any compliance blockers; never misrepresent a preview as a verified production export.
+1. Open `references/content-contract.md`, `references/layout-catalog.md`, `references/mascot-background-rules.md`, `references/single-image-layout.md`, and `references/quality-checklist.md`.
+2. Extract and lock all user-supplied facts, dates, names, numbers, and image order. Record any user-supplied motto and any explicit authorization to create one.
+3. Select layout 01–05, mascot usage, and background direction. Plan one fixed-size portrait composition at 1440 × 2560. Map every required news image to a visible placement on that single canvas.
+4. Build decorative background/illustration layers separately from source images. Generate or compose backgrounds, hero visuals, icon sets, and decorative motifs that are clearly related to the story theme (for example cyber, digital systems, infrastructure, awareness, internal fun, food/activity, etc.). Use PEA Watt-D only as a secondary decorative layer.
+5. Compose all text in verified Google Sans. Insert every required supplied image with contain placement. Place the exact logo and protected header/sub-header/footer text.
+6. If a logo file is available, use `python scripts/lock_logo.py input.jpg output.jpg --logo assets/pea-logo-exact-original.png` to apply or verify the exact logo at the required fixed canvas size without scaling the logo itself.
+7. Transcribe readable final text and compare it against the source using `python scripts/audit_copy.py --source content_source.txt --final final_transcription.txt`.
+8. Validate the exported image with `python scripts/validate_output.py final.jpg`. The validator checks JPEG format, exact dimensions, single-frame output, and safe orientation metadata. Also visually confirm that the page is not dominated by large plain white unused areas and that the generated/decorative background meaningfully supports the story.
+9. Deliver only the single final JPG/JPEG. Report the selected layout, mascot decision, background direction, image count used, and any compliance blockers.
 
 ## Style system
 
-- Primary dark purple approximately `#79005E`; secondary purple `#9A6597`; warm gold `#D5A125`; light wash `#F8F3FA`; white background. Adapt lightness for readability, but preserve CI hierarchy.
-- Use rounded cards, restrained shadow, clear margins, gold separator rules, a readable title hierarchy, and a curved/wavy brand divider when appropriate. A page can vary its illustration, mascot, and geometry without varying the logo/copy identity.
-- Allow neutral contextual icons (shield, lock, terminal, network, server, database, analytics, cloud, monitoring, fiber, warning, gear, celebration/confetti when the story is informal), but no misleading alerts or fabricated brand endorsements. Prefer original vector-style illustrations separate from user attachments. Decorative icons can be placed near headings, never over photos.
-- Backgrounds may range from Chiang Mai landmarks, abstract digital networks, cyber shields, data flows, system screens, office/community scenes, or festive internal motifs depending on the subject, but they must remain decorative, subtle, and readable.
-- PEA Watt-D can appear as a corner helper, title-side companion, section accent, or footer-side decorative character. Keep clear space around the logo and locked text. Do not let the mascot cover user photos or impersonate a documented person in the event.
-- For print, set margins and safe areas; for mobile, keep text legible. Avoid presenting illustrative devices/screens/people/mascots as documentary evidence.
+- Primary dark purple approximately `#79005E`; secondary purple `#9A6597`; warm gold `#D5A125`; light wash `#F8F3FA`; white or very light background base.
+- Use rounded cards, restrained shadow, clear margins, gold separators, and a clear visual hierarchy.
+- Use contextual icons, illustrated hero elements, soft pattern overlays, gradient panels, and section graphics when helpful, but never place them over user photos.
+- Use background fills, color blocks, subtle patterns, or thematic illustrations to reduce large plain-white empty zones while preserving readability.
+- Keep Watt-D, if used, away from the protected logo and text.
 
-## Assets / references / tools
+## Bundled resources
 
-- `assets/approved-layout-reference.png` = style 01 (the previously approved template); `assets/original-newsletter-reference.png` = source inspiration.
-- `assets/layout-02-digital-operations.png`, `assets/layout-03-cyber-shield.png`, `assets/layout-04-enterprise-analytics.png`, and `assets/layout-05-cyber-ops-infrastructure.png` = four additional conceptual layouts, NOT source data.
-- `assets/pea-logo-exact-original.png` = protected pixel-original logo extracted from the user-supplied sample.
-- `references/layout-catalog.md` = five variants, routing, safety of sample elements.
-- `references/mascot-background-rules.md` = rules for using PEA Watt-D and selecting a content-appropriate decorative background.
-- `references/content-contract.md` and `assets/content-input-example.md` = incoming information, motto authorization rules, and exactness rules.
-- `assets/newsletter-prompt.th.md` = short copy-and-fill prompt; keep identical to the repository entrypoint `prompts/newsletter-prompt.th.md`.
-- `references/single-image-layout.md` = one-canvas planning, attachment manifest, readability and capacity gates.
-- `references/quality-checklist.md` = preflight QA; `references/CHANGELOG.md` = change history.
-- `scripts/validate_output.py` = strict static-PNG size/orientation check; it never repairs or resizes a file.
-- `scripts/lock_logo.py` and `scripts/audit_copy.py` = deterministic pixel/text audits. Test scripts on the target environment before relying on them.
-
-## Example requests
-
-- "Create a PEA newsletter about verifying Industrial Switch and ODF equipment from the attached text/photos; choose layout 05, use a network-infrastructure background, and preserve every date, number, and actual image."
-- "Make a Thai cyber safety awareness update in style 03. Include PEA Watt-D as a friendly corner mascot, but do not invent any extra steps."
-- "Show the five PEA infographic styles and suggest which one suits an IT dashboard rollout, then build the chosen one with a data-themed background when I send the content."
-- "Create an internal fun-news issue and choose the layout automatically. You may use PEA Watt-D and a playful background if it helps the tone, while keeping all supplied photos unchanged."
+- `references/layout-catalog.md` = five layout patterns and routing guidance.
+- `references/mascot-background-rules.md` = PEA Watt-D and background usage rules.
+- `references/content-contract.md` = content exactness and image-handling rules.
+- `references/single-image-layout.md` = fixed-size one-image planning rules.
+- `references/quality-checklist.md` = preflight QA checklist.
+- `assets/content-input-example.md` = optional intake form.
+- `assets/newsletter-prompt.th.md` = short fill-in prompt; keep identical to `../prompts/newsletter-prompt.th.md` when maintained in a repo.
+- `scripts/audit_copy.py`, `scripts/lock_logo.py`, and `scripts/validate_output.py` = deterministic helper scripts.

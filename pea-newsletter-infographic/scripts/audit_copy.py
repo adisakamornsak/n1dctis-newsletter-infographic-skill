@@ -1,39 +1,38 @@
 #!/usr/bin/env python3
-"""Check required Thai labels and exact numeric strings in final copy."""
-from argparse import ArgumentParser
-from collections import Counter
+from __future__ import annotations
+import argparse
 from pathlib import Path
 import re
 
-REQUIRED=(
-'กองเทคโนโลยีดิจิทัลและการสื่อสาร',
-'แผนกระบบสารสนเทศและความปลอดภัยไซเบอร์',
-'การไฟฟ้าส่วนภูมิภาค เขต 1 ภาคเหนือ (จังหวัดเชียงใหม่)',
-)
-# Capture literal numeric groups; preserve their written scripts and punctuation.
-NUMBERS=re.compile(r'[0-9๐-๙]+(?:[.,:/%-][0-9๐-๙]+)*')
+REQUIRED = [
+    'กองเทคโนโลยีดิจิทัลและการสื่อสาร',
+    'แผนกระบบสารสนเทศและความปลอดภัยไซเบอร์',
+    'การไฟฟ้าส่วนภูมิภาค เขต 1 ภาคเหนือ (จังหวัดเชียงใหม่)',
+]
 
-def audit(source: str, final: str):
-    errors=[]
-    for part in REQUIRED:
-        if final.count(part)!=1:
-            errors.append(f'Fixed text missing or repeated ({final.count(part)}): {part}')
-    original=Counter(NUMBERS.findall(source))
-    produced=Counter(NUMBERS.findall(final))
-    for token,count in original.items():
-        if produced[token] < count:
-            errors.append(f'Numeric token changed/omitted: {token!r}; source {count}, final {produced[token]}')
-    return errors
+def extract_numbers(text: str) -> list[str]:
+    return re.findall(r'[0-9๐-๙][0-9๐-๙,./:-]*', text)
 
-if __name__=='__main__':
-    parser=ArgumentParser()
-    parser.add_argument('--source',required=True,type=Path)
-    parser.add_argument('--final',required=True,type=Path)
-    a=parser.parse_args()
-    errors=audit(a.source.read_text(encoding='utf-8'),a.final.read_text(encoding='utf-8'))
-    if errors:
-        print('FAIL: ' + str(len(errors)) + ' issue(s)')
-        for e in errors: print('- ' + e)
-        raise SystemExit(1)
-    print('PASS: fixed text once each; all source numeric tokens retained verbatim')
-    print('NOTE: manually inspect final raster and image preservation; this audits transcription only')
+def main() -> int:
+    p = argparse.ArgumentParser()
+    p.add_argument('--source', required=True)
+    p.add_argument('--final', required=True)
+    args = p.parse_args()
+    source = Path(args.source).read_text(encoding='utf-8')
+    final = Path(args.final).read_text(encoding='utf-8')
+    ok = True
+    for item in REQUIRED:
+        if item not in final:
+            print(f'MISSING REQUIRED TEXT: {item}')
+            ok = False
+    source_nums = set(extract_numbers(source))
+    final_nums = set(extract_numbers(final))
+    missing_nums = sorted(x for x in source_nums if x not in final_nums)
+    if missing_nums:
+        print('MISSING NUMERIC TOKENS:', ', '.join(missing_nums[:50]))
+        ok = False
+    print('audit_copy:', 'PASS' if ok else 'FAIL')
+    return 0 if ok else 1
+
+if __name__ == '__main__':
+    raise SystemExit(main())

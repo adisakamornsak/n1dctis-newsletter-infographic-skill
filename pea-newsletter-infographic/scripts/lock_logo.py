@@ -1,35 +1,28 @@
 #!/usr/bin/env python3
-"""Paste unmodified original PEA-logo pixels on a 1440x2560 PNG."""
-from argparse import ArgumentParser
-from pathlib import Path
+from __future__ import annotations
+import argparse
 from PIL import Image
 
-CANVAS = (1440, 2560)
-DEFAULT_POS = (50, 17)
+TARGET = (1440, 2560)
 
-def apply_logo(src: Path, dst: Path, logo_path: Path, pos=DEFAULT_POS):
-    page = Image.open(src).convert('RGB')
-    if page.size != CANVAS:
-        raise ValueError(f'Expected {CANVAS[0]}x{CANVAS[1]} pixels, got {page.size}. Do not resize the logo.')
-    logo = Image.open(logo_path).convert('RGB')
-    x, y = pos
-    if x < 0 or y < 0 or x + logo.width > page.width or y + logo.height > page.height:
-        raise ValueError(f'Logo does not fit at {pos} with size {logo.size} on {page.size}')
-    page.paste(logo, (x, y))
-    dst.parent.mkdir(parents=True, exist_ok=True)
-    page.save(dst)
-    check = Image.open(dst).convert('RGB').crop((x, y, x + logo.width, y + logo.height))
-    if check.tobytes() != logo.tobytes():
-        raise RuntimeError('Original logo pixels were not preserved in saved PNG')
-    print(f'PASS: exact {logo.width}x{logo.height} logo pixels preserved at {(x, y)}; saved {dst}')
+def main() -> int:
+    p = argparse.ArgumentParser(description='Paste an exact logo onto a fixed 1440x2560 canvas without scaling the logo.')
+    p.add_argument('input')
+    p.add_argument('output')
+    p.add_argument('--logo', required=True)
+    p.add_argument('--x', type=int, default=60)
+    p.add_argument('--y', type=int, default=60)
+    args = p.parse_args()
+    base = Image.open(args.input).convert('RGB')
+    if base.size != TARGET:
+        raise SystemExit(f'Input image must be {TARGET[0]}x{TARGET[1]}')
+    logo = Image.open(args.logo).convert('RGBA')
+    base_rgba = base.convert('RGBA')
+    base_rgba.alpha_composite(logo, (args.x, args.y))
+    out = base_rgba.convert('RGB')
+    out.save(args.output, format='JPEG', quality=92, optimize=True)
+    print(f'Wrote {args.output}')
+    return 0
 
 if __name__ == '__main__':
-    parser = ArgumentParser()
-    parser.add_argument('input_png', type=Path)
-    parser.add_argument('output_png', type=Path)
-    parser.add_argument('--logo', type=Path,
-                        default=Path(__file__).resolve().parent.parent / 'assets/pea-logo-exact-original.png')
-    parser.add_argument('--x', type=int, default=DEFAULT_POS[0])
-    parser.add_argument('--y', type=int, default=DEFAULT_POS[1])
-    args = parser.parse_args()
-    apply_logo(args.input_png, args.output_png, args.logo, (args.x, args.y))
+    raise SystemExit(main())

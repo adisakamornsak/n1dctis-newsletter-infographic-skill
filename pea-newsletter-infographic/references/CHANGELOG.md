@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.4.0 - 2026-11-12
+- Add support for bento-grid image layouts with mixed tile sizes for attached photos.
+- Allow crop-to-fill, scaling, zooming, and repositioning of attached images inside layout frames so photos can fully fill their grid cells without aspect-ratio gaps, while preserving important subjects and avoiding distortion.
+- Allow generated supporting illustrations, icons, and background filler graphics in empty areas so the infographic does not feel overly blank.
+- Keep one final JPG/JPEG at 1440x2560 portrait, all-image inclusion, and the explicit-only motto rule.
+
 ## v2.3.2 - 2026-11-11
 - Strengthen the art-direction rule so the skill actively creates story-matched backgrounds, hero graphics, and decorative elements instead of leaving large plain white empty areas.
 - Add guidance for thematic background generation, richer page filling, and QA checks against overly blank layouts.

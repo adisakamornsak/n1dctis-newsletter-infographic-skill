@@ -1,3 +1,17 @@
+# v2.4.3 validation — 2026-11-17
+
+- Skill structure validation: PASS.
+- Installable skill ZIP creation and archive checksum: PASS.
+- Repository and bundled Thai prompts: identical.
+- Diff whitespace check: PASS.
+- Existing suite: 54 tests run, 21 failures and 21 errors, both before and after this update (baseline b086197). Failure/error identities match after normalizing temporary paths. These are existing helper API and instruction-contract mismatches; this documentation/asset update does not repair or claim a passing full suite.
+- Added the user-approved newsletter reference and transparent running mascot derivative. Preserved existing protected assets and did not bundle fonts.
+- The reference was visually reviewed in its source task; JPEG geometry and copy audits passed there. This is not a guarantee of future generated artwork quality.
+
+The report below is historical and describes older PNG behavior; the current deliverable is one 1440 × 2560 JPEG.
+
+---
+
 # Validation report - v2.3.0 fixed portrait output
 
 ## Baseline and scope

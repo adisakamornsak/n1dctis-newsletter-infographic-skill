@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.4.3 - 2026-11-16
+- Add the user-approved activity-news photo-grid direction and latest reference image.
+- Bundle the approved transparent running Watt-D derivative with its original, preserving provenance and white character details.
+- Improve Thai paragraph flow and word-aware line breaks; synchronize prompts and QA.
+
 ## v2.4.2 - 2026-11-16
 - Explicitly allow cropping news images and supporting illustrations to emphasize focal subjects and compose attractive collages or bento grids. Preserve essential subjects, text, context, and aspect ratio; use another frame or contain placement when necessary.
 - Keep logo cropping prohibited and source image files unchanged. Synchronize prompts, layout guidance, and QA.

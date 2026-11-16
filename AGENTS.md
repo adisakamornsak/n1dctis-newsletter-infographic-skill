@@ -9,8 +9,8 @@ that only reads plain text.
 Keep the canonical skill folder intact. Keep the version, short prompt and QA contract consistent with every authorized change. Do not treat the illustrative template dates,
 percentages, scenes, logos, or people as event evidence.
 
-Do not regenerate the logo or user photos. Use only verified original Watt-D
-artwork; without it, omit in auto mode or report a missing asset in include mode.
+Do not regenerate the logo or user photos. Use verified original Watt-D artwork or the explicitly user-approved transparent
+cutout bundled with this skill; without it, omit in auto mode or report a missing asset in include mode.
 Do not distribute fonts or silently use a fallback. Never call an unverified
 font or generative rendering Google Sans-compliant.
 

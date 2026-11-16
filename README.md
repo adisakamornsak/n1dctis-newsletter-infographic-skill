@@ -1,8 +1,8 @@
 # PEA Newsletter Infographic - N1 DCTIS
 
-**Skill v2.4.2 - 1440x2560 portrait JPG, bento grids, all supplied news images**
+**Skill v2.4.3 - 1440x2560 portrait JPG, bento grids, all supplied news images**
 
-Use this instruction bundle and its Thai prompt with a compatible assistant or a manual design workflow. No model, API key, Google Sans font file or official Watt-D artwork is included.
+Use this instruction bundle and its Thai prompt with a compatible assistant or a manual design workflow. No model, API key, Google Sans font file is included. The bundle includes the supplied running Watt-D original, its user-approved transparent derivative, and a user-approved example newsletter.
 
 ## Start here
 
@@ -10,7 +10,11 @@ Use this instruction bundle and its Thai prompt with a compatible assistant or a
 2. Make the complete [skill folder](pea-newsletter-infographic/SKILL.md) and required assets readable to the tool you use.
 3. Deliver exactly one final JPG/JPEG at 1440x2560 px, portrait.
 
-## v2.4.2 layout behavior
+## v2.4.3 layout behavior
+
+- Prefer the approved photo-grid treatment for activity news; adapt the number of images and sections to each story.
+- Place a transparent Watt-D cutout beside the headline when appropriate, without a white backing card.
+- Let Thai copy flow to the available width with natural word boundaries; verify line breaks after rendering.
 
 - Allow proportional logo downscaling to suit the infographic; preserve the entire logo, original colors, details, and clear space.
 - Accept all required user-supplied news images.
@@ -26,4 +30,4 @@ Footer: การไฟฟ้าส่วนภูมิภาค เขต 1 �
 
 See [layout catalog](pea-newsletter-infographic/references/layout-catalog.md), [content rules](pea-newsletter-infographic/references/content-contract.md), [mascot/background rules](pea-newsletter-infographic/references/mascot-background-rules.md), [single-image rules](pea-newsletter-infographic/references/single-image-layout.md), and [QA](pea-newsletter-infographic/references/quality-checklist.md).
 
-The existing reference PNG assets and exact logo are preserved; v2.4.2 changes instructions and layout behavior, not those source assets.
+The existing reference PNG assets and exact logo are preserved; v2.4.3 adds the approved reference and mascot cutout without replacing protected source assets.

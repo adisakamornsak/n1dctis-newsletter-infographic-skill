@@ -44,6 +44,17 @@ class SingleImagePolicyTests(unittest.TestCase):
             with self.subTest(link=path):
                 self.assertTrue((SKILL / path).is_file())
 
+    def test_font_fallback_policy_and_prompts_are_synchronized(self):
+        skill = (SKILL / 'SKILL.md').read_text()
+        self.assertIn('Google Prompt (Prompt)', skill)
+        self.assertIn('disclose the fallback', skill)
+        self.assertIn('if neither font is available', skill)
+        prompt = (ROOT / 'prompts/newsletter-prompt.th.md').read_text()
+        self.assertEqual(prompt, (SKILL / 'assets/newsletter-prompt.th.md').read_text())
+        self.assertIn('Google Prompt (Prompt)', prompt)
+        self.assertIn('หากไม่มีทั้งสองฟอนต์ให้แจ้งข้อจำกัด', prompt)
+        self.assertIn('Google Prompt', (SKILL / 'references/quality-checklist.md').read_text())
+
     def test_approved_reference_and_transparent_mascot_are_usable(self):
         from PIL import Image
         from test_portrait_output import validator

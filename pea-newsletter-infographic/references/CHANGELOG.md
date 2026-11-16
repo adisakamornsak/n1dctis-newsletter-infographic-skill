@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.4.5 - 2026-11-17
+- Prefer Thai-capable Google Sans and permit verified Thai-capable Google Prompt as a disclosed fallback when Google Sans is unavailable.
+- Recheck typography and line breaks after fallback; report a blocker if neither font is available.
+
 ## v2.4.4 - 2026-11-17
 - Repair helper APIs and current JPEG contract tests; replace obsolete PNG, no-crop and version-pinned assertions.
 - Reject corrupt/truncated, non-RGB, misnamed and rotated output; preserve input files during logo export.

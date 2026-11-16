@@ -1,8 +1,8 @@
 # PEA Newsletter Infographic - N1 DCTIS
 
-**Skill v2.4.4 - 1440x2560 portrait JPG, bento grids, all supplied news images**
+**Skill v2.4.5 - 1440x2560 portrait JPG, bento grids, all supplied news images**
 
-Use this instruction bundle and its Thai prompt with a compatible assistant or a manual design workflow. No model, API key or Google Sans font file is included. The bundle includes the supplied running Watt-D original, its user-approved transparent derivative, and a user-approved example newsletter.
+Use this instruction bundle and its Thai prompt with a compatible assistant or a manual design workflow. No model, API key, Google Sans or Google Prompt font file is included. The bundle includes the supplied running Watt-D original, its user-approved transparent derivative, and a user-approved example newsletter.
 
 ## Start here
 
@@ -10,7 +10,9 @@ Use this instruction bundle and its Thai prompt with a compatible assistant or a
 2. Make the complete [skill folder](pea-newsletter-infographic/SKILL.md) and required assets readable to the tool you use.
 3. Deliver exactly one final JPG/JPEG at 1440x2560 px, portrait.
 
-## v2.4.4 validation fixes
+Google Sans is preferred; use Thai-capable Google Prompt as the disclosed fallback when Google Sans is unavailable. If neither is available, report the blocker.
+
+## v2.4.5 validation fixes
 
 The helper APIs and tests now target RGB JPEG output. Validation fully decodes the image and rejects incorrect file extensions, truncated data and EXIF rotation. Copy auditing requires each protected organization line exactly once. Logo export requires a separate JPG/JPEG destination.
 

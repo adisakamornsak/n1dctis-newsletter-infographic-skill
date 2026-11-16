@@ -11,8 +11,7 @@ percentages, scenes, logos, or people as event evidence.
 
 Do not regenerate the logo or user photos. Use verified original Watt-D artwork or the explicitly user-approved transparent
 cutout bundled with this skill; without it, omit in auto mode or report a missing asset in include mode.
-Do not distribute fonts or silently use a fallback. Never call an unverified
-font or generative rendering Google Sans-compliant.
+Do not distribute fonts. Prefer verified Thai-capable Google Sans; use verified Thai-capable Google Prompt only when Google Sans is unavailable, and disclose this fallback. Never claim Prompt is Google Sans or silently use another font.
 
 The helper scripts are not a complete renderer. Read `docs/validation-report.md`
 for tested behavior and gaps. Do not automatically upload inputs, publish assets,

@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.4.4 - 2026-11-17
+- Repair helper APIs and current JPEG contract tests; replace obsolete PNG, no-crop and version-pinned assertions.
+- Reject corrupt/truncated, non-RGB, misnamed and rotated output; preserve input files during logo export.
+- Check required copy appears exactly once; keep CLI and callable audits aligned.
+- Update validation evidence to the repaired suite and document remaining visual/factual QA limits.
+
 ## v2.4.3 - 2026-11-16
 - Add the user-approved activity-news photo-grid direction and latest reference image.
 - Bundle the approved transparent running Watt-D derivative with its original, preserving provenance and white character details.

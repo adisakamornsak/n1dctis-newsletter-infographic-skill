@@ -1,72 +1,62 @@
-# v2.4.3 validation — 2026-11-17
+# Validation report — v2.4.4, 2026-11-17
 
-- Skill structure validation: PASS.
-- Installable skill ZIP creation and archive checksum: PASS.
-- Repository and bundled Thai prompts: identical.
-- Diff whitespace check: PASS.
-- Existing suite: 54 tests run, 21 failures and 21 errors, both before and after this update (baseline b086197). Failure/error identities match after normalizing temporary paths. These are existing helper API and instruction-contract mismatches; this documentation/asset update does not repair or claim a passing full suite.
-- Added the user-approved newsletter reference and transparent running mascot derivative. Preserved existing protected assets and did not bundle fonts.
-- The reference was visually reviewed in its source task; JPEG geometry and copy audits passed there. This is not a guarantee of future generated artwork quality.
+## Results
 
-The report below is historical and describes older PNG behavior; the current deliverable is one 1440 × 2560 JPEG.
+- `python3 -m unittest discover -s tests -v`: **49 tests passed**, no failures, errors or skips.
+- Skill `quick_validate.py`: PASS.
+- `python3 tools/package_skill.py --output dist/skill.zip --force`: PASS, including archive checksum.
+- Repository and bundled Thai prompt versions/content: synchronized.
+- `git diff --check`: PASS.
 
----
+## Repair scope
 
-# Validation report - v2.3.0 fixed portrait output
+The v2.4.3 baseline ran 54 tests with 21 failures and 21 errors. The old suite
+called missing helper functions and still required PNG, version v2.3.0,
+lossless logo pixels, prohibited photo cropping and a fixed 1800-character
+prompt limit. Those expectations conflict with the current authorized JPEG,
+proportional logo scaling and focal-photo-cropping requirements.
 
-## Baseline and scope
+The current suite consolidates redundant wording assertions, removes obsolete
+requirements, checks the current version dynamically, and adds behavioral
+coverage. No failing test is skipped or marked as an expected failure.
 
-- GitHub main inspected at `247846ccc84567d758101cdbb30f54ff97cdf1f1` (v2.2.0).
-- New target: exactly one static PNG, width=1440 px, height=2560 px, portrait 9:16.
-- The user's long edge is vertical. Width=2560/height=1440 would be landscape.
-- Removed the earlier canvas-expansion fallback from active instructions and both short prompts.
-- Retained all-news-images, explicit-only motto, brand, source-copy and font rules.
-- No PNG, original logo, font or mascot asset is changed. No complete newsletter was rendered.
+## Tested behavior
 
-## Executed checks
-
-| Check | Result |
-| --- | --- |
-| Skill structure (`quick_validate.py`) | PASS |
-| Copy-helper tests | 5 PASS |
-| Motto instruction-contract tests | 8 PASS |
-| Single-image instruction-contract tests | 13 PASS |
-| Package-builder tests, synthetic fixtures | 7 PASS |
-| Portrait validator/helper tests, synthetic fixtures | 12 PASS |
-| Portrait instruction-contract tests | 3 PASS |
-| Total selected unit tests | 48 PASS |
-| Short prompt | 30 lines, 1747 Unicode code points |
-| Repository and bundled prompt | Identical bytes |
-
-The geometry tests create and inspect actual synthetic image files. They check
-1440x2560 acceptance, rejection of landscape/legacy/oversized/wrong-resolution
-images, non-PNG data under a PNG filename, animation, EXIF transforms, missing
-or corrupt files, read-only validation, CLI exit status, and logo placement
-using a synthetic fixture. These tests do not verify real PEA branding.
-
-Run from a complete repository checkout:
-
-```bash
-python -m unittest discover -s tests -v
-python pea-newsletter-infographic/scripts/validate_output.py output.png
-python tools/package_skill.py --output dist/skill.zip
-```
+- Copy auditing: each protected line appears exactly once, source numeric tokens
+  remain present, Thai/Arabic digits are distinct, and CLI exit status matches
+  callable results. Missing input files fail cleanly.
+- Logo placement: fixed canvas, proportional downscaling, invalid scale and
+  clipping rejection, correct placement/color with JPEG tolerance, immutable
+  source bytes, separate destination requirement and JPEG naming.
+- Final output: .jpg/.jpeg filename, actual RGB JPEG, exact 1440 × 2560 geometry,
+  no EXIF rotation, complete image decoding, and no mutation during validation.
+  Corrupt, missing, truncated, non-RGB, disguised PNG, animated PNG and wrong-size
+  files are rejected. CLI success/failure statuses are exercised.
+- Packaging: required assets, source-byte preservation, checksum, font/symlink
+  exclusion, and explicit overwrite rules.
+- Instruction contracts: fixed JPEG delivery, all images, capacity handling,
+  focal cropping versus protected logo rules, five layouts, real reference
+  links, current synchronized prompt, fixed copy and explicit-only motto gate.
+- Approved assets: final reference passes the JPEG validator; mascot asset has
+  both transparent and opaque alpha values.
 
 ## Limits
 
-The latest repository logo binary was not available locally in this environment.
-Its Git blob is `6a809eb933f8e38ad32835db83efce23c7141811`. An older local copy was
-not substituted. The three existing real-logo tests were not rerun. The
-updated logo helper was tested on synthetic pixels at the new dimensions.
-A full installable archive must be packaged from a complete repository checkout
-with the current logo; no incomplete archive is represented as a full skill.
+These checks do not render a new newsletter or prove model compliance. Visually
+review Thai line breaks, branding, image coverage and readability in every final
+output. Copy auditing detects missing numeric tokens, not every invented extra
+number, changed numerical association or semantic error. The tests explicitly
+retain this limitation. JPEG pixels are lossy; source files remain unchanged.
 
-`validate_output.py` never resizes or edits a file. It checks PNG geometry,
-frame count and orientation only, not Google Sans identity, source-photo
-coverage, exact text, layout readability or whether an AI follows the skill.
-The unchanged copy helper does not reject every added number.
+## Reproduce
 
-No fixed-size canvas has infinite readable capacity. If all required content
-cannot fit readably, the skill must report the conflict without changing size,
-splitting pages, omitting images or claiming success. The final image still
-requires visual and content QA on the actual target renderer.
+```bash
+python3 -m pip install -r requirements.txt
+python3 -m unittest discover -s tests -v
+python3 tools/package_skill.py --output dist/skill.zip --force
+python3 pea-newsletter-infographic/scripts/validate_output.py final.jpg
+```
+
+Skill structure validation additionally needs PyYAML and the host's
+`skill-creator/scripts/quick_validate.py`; it is not a runtime dependency of the
+newsletter helpers.

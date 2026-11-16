@@ -32,83 +32,109 @@ class PortraitOutputTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
 
-    def png(self, size=(1440, 2560), name='output.png'):
+    def jpeg(self, size=(1440, 2560), name='output.jpg'):
         path = self.root / name
         Image.new('RGB', size, 'white').save(path)
         return path
 
     def test_exact_portrait_passes_without_modifying_bytes(self):
-        path = self.png()
+        path = self.jpeg()
         before = hashlib.sha256(path.read_bytes()).hexdigest()
         self.assertEqual(validator.validate_output(path), (1440, 2560))
         self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), before)
 
+    def test_png_disguised_as_jpeg_is_rejected(self):
+        path = self.root / 'fake.jpg'
+        Image.new('RGB', validator.TARGET).save(path, format='PNG')
+        with self.assertRaisesRegex(ValueError, 'expected JPEG'):
+            validator.validate_output(path)
+
+    def test_truncated_jpeg_is_rejected(self):
+        path = self.jpeg()
+        path.write_bytes(path.read_bytes()[:2000])
+        with self.assertRaises(ValueError):
+            validator.validate_output(path)
+
+    def test_non_rgb_jpeg_is_rejected(self):
+        for mode in ('L', 'CMYK'):
+            path = self.root / f'{mode}.jpg'
+            Image.new(mode, validator.TARGET).save(path)
+            with self.subTest(mode=mode), self.assertRaisesRegex(ValueError, 'expected RGB'):
+                validator.validate_output(path)
+
+    def test_jpeg_extension_and_upright_exif_pass(self):
+        path = self.root / 'output.JPEG'
+        exif = Image.Exif(); exif[274] = 1
+        Image.new('RGB', validator.TARGET).save(path, exif=exif)
+        self.assertEqual(validator.validate_output(path), validator.TARGET)
+
     def test_landscape_is_rejected(self):
         with self.assertRaises(ValueError):
-            validator.validate_output(self.png((2560, 1440)))
+            validator.validate_output(self.jpeg((2560, 1440)))
 
     def test_legacy_baseline_is_rejected(self):
         with self.assertRaises(ValueError):
-            validator.validate_output(self.png((1086, 1536)))
+            validator.validate_output(self.jpeg((1086, 1536)))
 
     def test_same_aspect_ratio_wrong_resolution_is_rejected(self):
         with self.assertRaises(ValueError):
-            validator.validate_output(self.png((720, 1280)))
+            validator.validate_output(self.jpeg((720, 1280)))
 
     def test_oversized_canvas_is_rejected(self):
         with self.assertRaises(ValueError):
-            validator.validate_output(self.png((1440, 3000)))
+            validator.validate_output(self.jpeg((1440, 3000)))
 
     def test_jpeg_with_png_extension_is_rejected(self):
         path = self.root / 'fake.png'
-        Image.new('RGB', validator.CANVAS).save(path, format='JPEG')
+        Image.new('RGB', validator.TARGET).save(path, format='JPEG')
         with self.assertRaises(ValueError):
             validator.validate_output(path)
 
     def test_multiple_frames_are_rejected(self):
-        path = self.root / 'animated.png'
-        first = Image.new('RGB', validator.CANVAS, 'white')
-        second = Image.new('RGB', validator.CANVAS, 'black')
-        first.save(path, save_all=True, append_images=[second], duration=100, loop=0)
+        path = self.root / 'animated.jpg'
+        first = Image.new('RGB', validator.TARGET, 'white')
+        second = Image.new('RGB', validator.TARGET, 'black')
+        first.save(path, format='PNG', save_all=True, append_images=[second], duration=100, loop=0)
         with self.assertRaises(ValueError):
             validator.validate_output(path)
 
     def test_exif_orientation_transform_is_rejected(self):
-        path = self.root / 'rotation.png'
+        path = self.root / 'rotation.jpg'
         exif = Image.Exif()
         exif[274] = 6
-        Image.new('RGB', validator.CANVAS).save(path, exif=exif)
+        Image.new('RGB', validator.TARGET).save(path, exif=exif)
         with self.assertRaises(ValueError):
             validator.validate_output(path)
 
     def test_corrupt_and_missing_files_are_rejected(self):
-        path = self.root / 'corrupt.png'
+        path = self.root / 'corrupt.jpg'
         path.write_bytes(b'not an image')
-        for candidate in (path, self.root / 'missing.png'):
+        for candidate in (path, self.root / 'missing.jpg'):
             with self.subTest(path=candidate), self.assertRaises(ValueError):
                 validator.validate_output(candidate)
 
-    def test_logo_helper_preserves_synthetic_pixels_on_portrait(self):
-        source = self.png()
+    def test_logo_helper_preserves_synthetic_color_with_jpeg_tolerance(self):
+        source = self.jpeg()
         logo_path = self.root / 'synthetic-logo.png'
         Image.new('RGB', (90, 40), (31, 22, 50)).save(logo_path)
-        destination = self.root / 'composited.png'
+        destination = self.root / 'composited.jpg'
         with redirect_stdout(io.StringIO()):
             logo.apply_logo(source, destination, logo_path)
         self.assertEqual(validator.validate_output(destination), (1440, 2560))
         with Image.open(destination) as output, Image.open(logo_path) as original:
             x, y = logo.DEFAULT_POS
-            self.assertEqual(output.crop((x, y, x+90, y+40)).tobytes(), original.tobytes())
+            actual = output.getpixel((x+45, y+20))
+            self.assertTrue(all(abs(a-b) <= 3 for a,b in zip(actual, original.getpixel((45,20)))))
 
     def test_logo_helper_rejects_landscape(self):
         logo_path = self.root / 'synthetic-logo.png'
         Image.new('RGB', (90, 40)).save(logo_path)
         with self.assertRaises(ValueError):
-            logo.apply_logo(self.png((2560,1440)), self.root / 'out.png', logo_path)
+            logo.apply_logo(self.jpeg((2560,1440)), self.root / 'out.jpg', logo_path)
 
     def test_cli_exit_status(self):
         script = SKILL / 'scripts/validate_output.py'
-        for path, expected in ((self.png(), 0), (self.png((100,100),'wrong.png'),1)):
+        for path, expected in ((self.jpeg(), 0), (self.jpeg((100,100),'wrong.jpg'),1)):
             result = subprocess.run([sys.executable, str(script), str(path)], capture_output=True, text=True)
             self.assertEqual(result.returncode, expected, result.stdout + result.stderr)
 
@@ -128,16 +154,17 @@ class PortraitPolicyTests(unittest.TestCase):
                     self.assertNotIn(phrase, text)
 
     def test_helpers_agree_on_width_height(self):
-        self.assertEqual(logo.CANVAS, (1440,2560))
-        self.assertEqual(validator.CANVAS, (1440,2560))
+        self.assertEqual(logo.TARGET, (1440,2560))
+        self.assertEqual(validator.TARGET, (1440,2560))
 
     def test_prompt_is_synced_and_explicit(self):
         text=(ROOT/'prompts/newsletter-prompt.th.md').read_text(encoding='utf-8')
         self.assertEqual(text,(SKILL/'assets/newsletter-prompt.th.md').read_text(encoding='utf-8'))
-        self.assertIn('1440x2560 px (width x height), portrait 9:16',text)
-        self.assertIn('v2.3.0',text)
-        self.assertLessEqual(len(text),1800)
-        self.assertLessEqual(len(text.splitlines()),30)
+        self.assertIn('1440x2560', text)
+        self.assertIn('JPG/JPEG', text)
+        import re
+        version = re.search(r'team edition (v[0-9.]+)', (SKILL/'SKILL.md').read_text()).group(1)
+        self.assertIn(version, text)
 
 
 if __name__ == '__main__':

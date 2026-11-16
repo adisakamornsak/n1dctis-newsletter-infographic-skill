@@ -1,9 +1,9 @@
-# Prompt พร้อมกรอก — PEA Newsletter Infographic v2.4.3
+# Prompt พร้อมกรอก — PEA Newsletter Infographic v2.4.4
 
 คัดลอกกรอบนี้ เติมข่าวและแนบภาพให้ครบ ตัวเลือกปล่อยเป็น `auto` ได้
 
 ```text
-สร้าง Newsletter Infographic ภาษาไทย เป็นไฟล์ JPG/JPEG ตาม PEA Newsletter Infographic v2.4.3 อ่าน SKILL.md และกฎอ้างอิงก่อนทำงาน; ถ้าเข้าถึงไม่ได้ให้แจ้ง
+สร้าง Newsletter Infographic ภาษาไทย เป็นไฟล์ JPG/JPEG ตาม PEA Newsletter Infographic v2.4.4 อ่าน SKILL.md และกฎอ้างอิงก่อนทำงาน; ถ้าเข้าถึงไม่ได้ให้แจ้ง
 
 หัวข้อ: [ใส่หัวข้อ]
 วันที่/สถานที่ (ถ้ามี): [ใส่ตามจริง]

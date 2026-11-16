@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.4.2 - 2026-11-16
+- Explicitly allow cropping news images and supporting illustrations to emphasize focal subjects and compose attractive collages or bento grids. Preserve essential subjects, text, context, and aspect ratio; use another frame or contain placement when necessary.
+- Keep logo cropping prohibited and source image files unchanged. Synchronize prompts, layout guidance, and QA.
+
+## v2.4.1 - 2026-11-16
+- Allow proportional logo downscaling to suit the infographic dimensions and composition while preserving original colors, details, clear space, and complete visibility.
+- Add optional `--scale` to the logo helper; reject enlargement, invalid scales, and placements that crop the logo. Keep the source asset unchanged.
+- Synchronize the skill, Thai prompts, content contract, and QA checklist.
+
 ## v2.4.0 - 2026-11-12
 - Add support for bento-grid image layouts with mixed tile sizes for attached photos.
 - Allow crop-to-fill, scaling, zooming, and repositioning of attached images inside layout frames so photos can fully fill their grid cells without aspect-ratio gaps, while preserving important subjects and avoiding distortion.

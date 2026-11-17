@@ -1,0 +1,15 @@
+{
+  "name": "n1dctis-newsletter",
+  "owner": {
+    "name": "adisakamornsak",
+    "url": "https://github.com/adisakamornsak"
+  },
+  "description": "PEA Newsletter Infographic skill for Claude Code",
+  "plugins": [
+    {
+      "name": "pea-newsletter-infographic",
+      "source": "./plugins/pea-newsletter-infographic",
+      "description": "Create Thai PEA newsletters from text and images using the five purple-and-gold layouts."
+    }
+  ]
+}

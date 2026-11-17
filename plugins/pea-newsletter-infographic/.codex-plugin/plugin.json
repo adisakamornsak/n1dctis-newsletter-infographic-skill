@@ -1,0 +1,28 @@
+{
+  "name": "pea-newsletter-infographic",
+  "version": "3.0.0",
+  "description": "Create professional Thai PEA newsletter infographics with five purple-and-gold layouts, configurable department headers, protected source photos, and one 1440x2560 JPG output.",
+  "author": {
+    "name": "adisakamornsak",
+    "url": "https://github.com/adisakamornsak"
+  },
+  "repository": "https://github.com/adisakamornsak/n1dctis-newsletter-infographic-skill",
+  "homepage": "https://github.com/adisakamornsak/n1dctis-newsletter-infographic-skill",
+  "keywords": [
+    "newsletter",
+    "infographic",
+    "thai",
+    "pea"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "PEA Newsletter Infographic",
+    "shortDescription": "Create Thai PEA newsletters in five layouts",
+    "developerName": "adisakamornsak",
+    "category": "Productivity",
+    "brandColor": "#79005E",
+    "defaultPrompt": [
+      "สร้าง Newsletter ภาษาไทยจากข่าวและภาพที่แนบ โดยใช้ชื่อแผนกที่ฉันระบุ"
+    ]
+  }
+}

@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.6.0 - 2026-11-17
+- Add GitHub install/update/run tooling and a Thai setup guide. Fetch main before each run, validate staged files, preserve local edits, back up replacements and roll back failed moves.
+- Require preflight before every newsletter request and reload installed instructions after success. Stop on failed freshness checks; distinguish CLI enforcement from instruction-based Desktop preflight.
+- Synchronize version, both short prompts, package requirements and QA.
+
 ## v2.5.1 - 2026-11-17
 - Add `layout-01-chiang-mai-classic.jpg`, a 1440x2560 illustrative composition guide with sample copy, flexible image slots, the original logo and a generated abstract purple/gold background. Compose text with verified Thai-capable Prompt because Google Sans is unavailable.
 - Vary backgrounds by story; no fixed Doi Suthep, mountain, temple or landmark requirement. Synchronize both prompts and QA.

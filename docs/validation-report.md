@@ -1,8 +1,8 @@
-# Validation report — v2.5.1, 2026-11-17
+# Validation report — v2.6.0, 2026-11-17
 
 ## Results
 
-- `python3 -m unittest discover -s tests -v`: **53 tests passed**, no failures, errors or skips.
+- `python3 -m unittest discover -s tests -v`: **67 tests passed**, no failures, errors or skips.
 - Skill `quick_validate.py`: unavailable in the current Python environments because PyYAML is not installed. The packaging tests still exercise frontmatter name/description checks.
 - `python3 tools/package_skill.py --output dist/skill.zip`: PASS, including archive checksum. Required layout references now use the current `.jpg` assets including layout 01; the retired `original-newsletter-reference.png` is no longer required. Existing logo and image source bytes are preserved.
 - Repository and bundled Thai prompt versions/content: synchronized.
@@ -10,13 +10,28 @@
 
 ## Current change
 
-The department line below the top header now accepts optional `sub_header`.
-Omitted, empty and whitespace-only values retain the original default; custom
-values are trimmed at the edges and preserved exactly. Both short prompts,
-intake, content rules and QA use this contract. Copy auditing accepts
-`--sub-header` and its callable API accepts `sub_header`. Tests cover custom
-values, missing/duplicated copy, numeric preservation, blank defaults and CLI
-behavior. Layout 01 is an illustrative template, not event evidence; its final JPEG was rendered and visually reviewed.
+v2.6.0 adds `tools/manage_skill.py` with install/update/status/run commands,
+a persistent updater and a per-request `scripts/preflight_update.py` gate.
+Every update fetches `main` before using it. The CLI launcher does not open
+Codex when freshness cannot be verified; Desktop direct invocation follows the
+skill instruction and is not an app-level hook.
+
+Fourteen installer tests use isolated local Git repositories to exercise actual
+fetch/archive/install operations, new commits with unchanged version numbers,
+backups, local edit preservation, rollback, unsafe archive rejection, locking,
+preflight and launch ordering. No GitHub writes or real Codex sessions occur.
+An additional smoke check installed all 75 current skill files with the real
+assets from a temporary local Git repository, verified their bytes against the
+source and successfully ran the persisted preflight updater.
+
+The actual GitHub `main` must contain v2.6.0 before public installation can work;
+this work does not push or publish the repository. Live GitHub installation and
+Windows execution have not been exercised here. Older unmanaged installations
+need the explicit `install --replace-existing` migration. The current updater
+runtime stays fixed until the user reinstalls a newer installer.
+
+Earlier v2.5 changes preserve configurable department copy and its blank default,
+consistent short prompts, and the visually reviewed illustrative layout 01.
 
 ## Earlier repair scope
 
@@ -42,6 +57,8 @@ coverage. No failing test is skipped or marked as an expected failure.
   no EXIF rotation, complete image decoding, and no mutation during validation.
   Corrupt, missing, truncated, non-RGB, disguised PNG, animated PNG and wrong-size
   files are rejected. CLI success/failure statuses are exercised.
+- Installation: fresh Git fetches, validated staged files, backup/rollback,
+  unchanged-version commits, preflight subprocess and fail-closed launcher.
 - Packaging: required assets, source-byte preservation, checksum, font/symlink
   exclusion, and explicit overwrite rules.
 - Instruction contracts: fixed JPEG delivery, all images, capacity handling,

@@ -3,9 +3,15 @@ name: pea-newsletter-infographic
 description: Create Thai PEA newsletter infographics for PEA departments, defaulting to the information systems and cybersecurity team. Use when producing or updating internal PEA newsletter graphics from Thai source text and user-supplied images. Enforce the exact PEA logo placement, exact header/footer and a configurable department sub-header, Google Sans typography with Google Prompt as the fallback, unchanged user photos, unchanged numeric data, optional PEA Watt-D mascot, and five reusable purple/gold layouts. Accept any number of supplied news images, keep everything in one final portrait image, and deliver exactly one compressed JPG at 1440x2560 pixels rather than PNG. Also generate story-matched backgrounds or supporting artwork so the page does not feel plain or excessively empty, and support bento-grid style image layouts with intelligent crop-and-fill behavior.
 ---
 
-# PEA Newsletter Infographic (team edition v2.5.1)
+# PEA Newsletter Infographic (team edition v2.6.0)
 
 Create professional Thai newsletters following the PEA purple/gold visual identity. Support **five layouts** rather than duplicating one design. Read [layout catalog](references/layout-catalog.md) for style selection, composition, and art-direction patterns, [mascot/background rules](references/mascot-background-rules.md) for PEA Watt-D and backdrops, and [single-image layout rules](references/single-image-layout.md) before planning the page.
+
+## Fresh GitHub check before each newsletter
+
+Before authoring or updating any newsletter, run `python scripts/preflight_update.py` using the absolute path inside this installed skill folder. This requires a managed installation made with the repository's `tools/manage_skill.py install`; see `docs/install-update.th.md` in the repository. It fetches the latest `main` every time. If the preflight fails, stop production and report the actual error; do not silently use an older local copy or claim the latest version was checked. This does not authorize uploads or publishing.
+
+After success, re-read `SKILL.md` and the needed references from the installed folder before planning the output, since this invocation may have replaced them. Check once per newsletter request; re-reading after the same successful check is not a new invocation. For the strongest entry-point enforcement, users can start a new Codex CLI session via `manage_skill.py run`, which updates before opening Codex. Direct invocation in Desktop relies on following this instruction, not an app-level hook. A plain-text host without command execution cannot perform this preflight and must report that limitation.
 
 ## Approved visual direction
 
@@ -52,7 +58,7 @@ Respect an explicit style choice. Otherwise auto-select the best match from the 
 
 ## Production workflow
 
-1. Open `references/content-contract.md`, `references/layout-catalog.md`, `references/mascot-background-rules.md`, `references/single-image-layout.md`, and `references/quality-checklist.md`.
+1. Complete the fresh GitHub preflight above, then open `references/content-contract.md`, `references/layout-catalog.md`, `references/mascot-background-rules.md`, `references/single-image-layout.md`, and `references/quality-checklist.md`.
 2. Resolve `sub_header` from the user’s value or the default and lock its wording. Extract and lock all user-supplied facts, dates, names, numbers, and image order. Record any user-supplied motto and any explicit authorization to create one.
 3. Select layout 01–05, mascot usage, and background direction. Plan one fixed-size portrait composition at 1440 × 2560. Map every required news image to a visible placement on that single canvas. Use collage or bento-grid image grouping when it improves density, balance, or readability. Plan each image focal point and crop to emphasize it while retaining essential content.
 4. Build decorative background/illustration layers separately from source images. Generate or compose backgrounds, hero visuals, icon sets, decorative motifs, and supporting filler graphics that are clearly related to the story theme (for example cyber, digital systems, infrastructure, awareness, internal fun, food/activity, etc.). Use PEA Watt-D only as a secondary decorative layer.
@@ -82,4 +88,5 @@ Respect an explicit style choice. Otherwise auto-select the best match from the 
 - `references/quality-checklist.md` = preflight QA checklist.
 - `assets/content-input-example.md` = optional intake form.
 - `assets/newsletter-prompt.th.md` = short fill-in prompt; keep identical to `../prompts/newsletter-prompt.th.md` when maintained in a repo.
+- `scripts/preflight_update.py` = mandatory per-request GitHub update check for managed installations.
 - `scripts/audit_copy.py`, `scripts/lock_logo.py`, and `scripts/validate_output.py` = deterministic helper scripts.

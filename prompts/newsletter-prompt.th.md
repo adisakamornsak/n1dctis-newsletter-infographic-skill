@@ -1,9 +1,11 @@
-# Prompt พร้อมกรอก — PEA Newsletter Infographic v2.5.1
+# Prompt พร้อมกรอก — PEA Newsletter Infographic v2.6.0
 
 คัดลอกกรอบนี้ เติมข่าวและแนบภาพให้ครบ ตัวเลือกปล่อยเป็น `auto` ได้
 
 ```text
-สร้าง Newsletter Infographic ภาษาไทย เป็นไฟล์ JPG/JPEG ตาม PEA Newsletter Infographic v2.5.1 อ่าน SKILL.md และกฎอ้างอิงก่อนทำงาน; ถ้าเข้าถึงไม่ได้ให้แจ้ง
+สร้าง Newsletter Infographic ภาษาไทย เป็นไฟล์ JPG/JPEG ตาม PEA Newsletter Infographic v2.6.0 อ่าน SKILL.md และกฎอ้างอิงก่อนทำงาน; ถ้าเข้าถึงไม่ได้ให้แจ้ง
+
+ก่อนเริ่มทุกคำขอ ให้รัน scripts/preflight_update.py จากสกิลที่ติดตั้งผ่าน tools/manage_skill.py install เพื่อดึง main ล่าสุด แล้วอ่าน SKILL.md และกฎอ้างอิงใหม่ หากตรวจ/อัปเดตไม่ได้ให้หยุดและแจ้งข้อจำกัด ห้ามใช้ฉบับเก่าเงียบ ๆ หรือนับการอ่านกฎใหม่ในคำขอเดิมเป็นการเริ่มรอบตรวจซ้ำ
 
 หัวข้อ: [ใส่หัวข้อ]
 วันที่/สถานที่ (ถ้ามี): [ใส่ตามจริง]

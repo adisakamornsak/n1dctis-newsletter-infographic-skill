@@ -1,18 +1,31 @@
 # PEA Newsletter Infographic - N1 DCTIS
 
-**Skill v2.5.1 - 1440x2560 portrait JPG, bento grids, all supplied news images**
+**Skill v2.6.0 - 1440x2560 portrait JPG, bento grids, all supplied news images**
 
 Use this instruction bundle and its Thai prompt with a compatible assistant or a manual design workflow. No model, API key, Google Sans or Google Prompt font file is included. The bundle includes the supplied running Watt-D original, its user-approved transparent derivative, and a user-approved example newsletter.
 
+## ติดตั้งจาก GitHub และอัปเดตก่อนใช้ทุกครั้ง
+
+อ่าน [คู่มือติดตั้งและอัปเดตภาษาไทย](docs/install-update.th.md) สำหรับการตั้งค่าครั้งแรกและการย้ายจาก ZIP
+
+```bash
+git clone https://github.com/adisakamornsak/n1dctis-newsletter-infographic-skill.git
+cd n1dctis-newsletter-infographic-skill
+python3 tools/manage_skill.py install
+python3 ~/.local/share/pea-newsletter/manage_skill.py run --prompt "สร้างข่าวจากข้อมูลที่ฉันจะให้"
+```
+
+`run` ตรวจและอัปเดตจาก `main` ก่อนเปิดแชท Codex CLI ใหม่ทุกครั้ง หากตรวจไม่ได้จะหยุด สกิลที่เรียกตรงใน Desktop ต้องรัน preflight ตามคำสั่งสกิลทุกคำขอ; ไม่ใช่ hook ของแอป ต้องเผยแพร่ชุดนี้ไปยัง `main` ก่อนผู้อื่นติดตั้งได้
+
 ## Start here
 
-1. Copy [the short Thai prompt](prompts/newsletter-prompt.th.md), fill the input fields and provide all source images.
+1. Install the managed GitHub workflow above, then copy [the short Thai prompt](prompts/newsletter-prompt.th.md), fill the input fields and provide all source images.
 2. Make the complete [skill folder](pea-newsletter-infographic/SKILL.md) and required assets readable to the tool you use.
 3. Deliver exactly one final JPG/JPEG at 1440x2560 px, portrait.
 
 Google Sans is preferred; use Thai-capable Google Prompt as the disclosed fallback when Google Sans is unavailable. If neither is available, report the blocker.
 
-## v2.5.1 configurable department line
+## Configurable department line
 
 Set `sub_header` to the department name to display immediately below the top header. Omitted, empty or whitespace-only values keep the existing default. Supplied values are trimmed at the edges and otherwise preserved exactly. For example: `sub_header: แผนกบริการลูกค้า`. Pass the same value to `audit_copy.py --sub-header "แผนกบริการลูกค้า"` when auditing custom copy.
 

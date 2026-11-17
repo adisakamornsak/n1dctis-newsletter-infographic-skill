@@ -1,0 +1,12 @@
+{
+  "name": "n1dctis-newsletter",
+  "interface": { "displayName": "PEA Newsletter" },
+  "plugins": [
+    {
+      "name": "pea-newsletter-infographic",
+      "source": { "source": "local", "path": "./plugins/pea-newsletter-infographic" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

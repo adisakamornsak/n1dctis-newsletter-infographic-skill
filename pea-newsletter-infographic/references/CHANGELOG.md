@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.0.0 - 2026-11-17
+- Replace the local runtime and per-request GitHub gate with the latest version synced by the Plugin system. Remove local installer, updater and image-helper scripts and their dependencies.
+- Add a portable skills-only Plugin and GitHub marketplace, plus maintainer-only build/check tooling without runtime dependencies for end users.
+- Preserve canonical assets, department default, five layouts, protected copy, original photos/logo, explicit-only motto gate and one 1440x2560 RGB JPEG.
+- Require capability checks and honest draft labels when a host cannot verify fonts, original-asset composition or final file properties. No claim of live GitHub freshness or tested mobile rendering.
+- Synchronize both short prompts, QA and Thai installation/publication guides.
+
 ## v2.6.0 - 2026-11-17
 - Add GitHub install/update/run tooling and a Thai setup guide. Fetch main before each run, validate staged files, preserve local edits, back up replacements and roll back failed moves.
 - Require preflight before every newsletter request and reload installed instructions after success. Stop on failed freshness checks; distinguish CLI enforcement from instruction-based Desktop preflight.

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "pea-newsletter-infographic",
+  "version": "3.0.0",
+  "description": "Thai PEA newsletter workflow with original brand assets, five flexible layouts and configurable department copy. Uses the version synced by the Plugin system; no local runtime required.",
+  "author": { "name": "adisakamornsak", "url": "https://github.com/adisakamornsak" },
+  "homepage": "https://github.com/adisakamornsak/n1dctis-newsletter-infographic-skill",
+  "repository": "https://github.com/adisakamornsak/n1dctis-newsletter-infographic-skill",
+  "keywords": ["newsletter", "infographic", "thai", "pea"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "PEA Newsletter Infographic",
+        "shortDescription": "จัดทำข่าว PEA ภาษาไทย พร้อมแนวทางม่วง–ทอง 5 แบบ",
+        "developerName": "adisakamornsak",
+        "category": "Productivity",
+        "brandColor": "#79005E",
+        "defaultPrompt": ["สร้าง Newsletter ภาษาไทยจากข่าวและภาพที่แนบ โดยใช้ชื่อแผนกที่ฉันระบุ"]
+      }
+    }
+  }
+}

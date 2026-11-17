@@ -1,5 +1,7 @@
 # Layout 01 design reference
 
+Historical creation record; the named legacy validation helpers below were retired in v3.0.0. Current packaging uses the skills-only Plugin workflow.
+
 - Final asset: `pea-newsletter-infographic/assets/layout-01-chiang-mai-classic.jpg`, RGB JPEG, 1440 × 2560 px.
 - Generated the decorative background with the built-in image generation tool; composed the original repository logo, text and photo placeholders separately. No user photos were regenerated. No mascot is used.
 - Used installed Google Prompt Regular/SemiBold after checking Thai cmap coverage; Google Sans was unavailable. Font files are not bundled. Browser rendering preserves Thai shaping.

@@ -1,5 +1,3 @@
-# Assets note
+# Assets
 
-Keep any existing approved logo, layout references, and official Watt-D assets with this skill when available.
-This bundle focuses on the instruction update that changes the final deliverable to JPG/JPEG and improves story-matched backgrounds.
-Do not replace protected source assets with AI-generated alternatives.
+Bundled original logo, owner-maintained references, original Watt-D artwork and approved transparent cutouts for the skills-only Plugin. Preserve every source asset byte. Layout samples are illustrative, not event evidence. No fonts or user news uploads are bundled.

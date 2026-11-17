@@ -1,3 +1,5 @@
+> เอกสารประวัติ v2.2.0 เท่านั้น คำสั่งและรายการไฟล์ด้านล่างไม่ใช่วิธีใช้หรือแพ็กปัจจุบัน ดู [คู่มือ Plugin](install-update.th.md) สำหรับ v3.0.0
+
 # Apply the v2.2.0 single-image update
 
 This bundle contains complete replacement/additional text and code files, not a patch. It is an update overlay, not the whole repository and not an installable skill.zip.

@@ -1,0 +1,12 @@
+{
+  "name": "pea-newsletter-plugin-maintenance",
+  "private": true,
+  "version": "3.0.0",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build:plugin": "node tools/plugin.mjs build",
+    "check:plugin": "node tools/plugin.mjs check",
+    "test": "node --test tests/*.test.mjs"
+  }
+}

@@ -1,6 +1,6 @@
 # PEA Newsletter Infographic - N1 DCTIS
 
-**Skill v2.4.5 - 1440x2560 portrait JPG, bento grids, all supplied news images**
+**Skill v2.5.1 - 1440x2560 portrait JPG, bento grids, all supplied news images**
 
 Use this instruction bundle and its Thai prompt with a compatible assistant or a manual design workflow. No model, API key, Google Sans or Google Prompt font file is included. The bundle includes the supplied running Watt-D original, its user-approved transparent derivative, and a user-approved example newsletter.
 
@@ -12,13 +12,19 @@ Use this instruction bundle and its Thai prompt with a compatible assistant or a
 
 Google Sans is preferred; use Thai-capable Google Prompt as the disclosed fallback when Google Sans is unavailable. If neither is available, report the blocker.
 
-## v2.4.5 validation fixes
+## v2.5.1 configurable department line
+
+Set `sub_header` to the department name to display immediately below the top header. Omitted, empty or whitespace-only values keep the existing default. Supplied values are trimmed at the edges and otherwise preserved exactly. For example: `sub_header: แผนกบริการลูกค้า`. Pass the same value to `audit_copy.py --sub-header "แผนกบริการลูกค้า"` when auditing custom copy.
+
+## Helper validation
 
 The helper APIs and tests now target RGB JPEG output. Validation fully decodes the image and rejects incorrect file extensions, truncated data and EXIF rotation. Copy auditing requires each protected organization line exactly once. Logo export requires a separate JPG/JPEG destination.
 
 Run `python3 -m unittest discover -s tests -v` after installing `requirements.txt`.
 
 ## Layout behavior
+
+Layout 01 now has its own [JPG reference](pea-newsletter-infographic/assets/layout-01-chiang-mai-classic.jpg). Its abstract purple/gold backdrop is an example: change backgrounds to suit each story, without requiring Doi Suthep or another landmark.
 
 - Prefer the approved photo-grid treatment for activity news; adapt the number of images and sections to each story.
 - Place a transparent Watt-D cutout beside the headline when appropriate, without a white backing card.
@@ -33,9 +39,9 @@ Run `python3 -m unittest discover -s tests -v` after installing `requirements.tx
 - Do not invent a motto unless explicitly requested for the current issue.
 
 Header: กองเทคโนโลยีดิจิทัลและการสื่อสาร
-Sub-header: แผนกระบบสารสนเทศและความปลอดภัยไซเบอร์
+Default sub-header (overridable with `sub_header`): แผนกระบบสารสนเทศและความปลอดภัยไซเบอร์
 Footer: การไฟฟ้าส่วนภูมิภาค เขต 1 ภาคเหนือ (จังหวัดเชียงใหม่)
 
 See [layout catalog](pea-newsletter-infographic/references/layout-catalog.md), [content rules](pea-newsletter-infographic/references/content-contract.md), [mascot/background rules](pea-newsletter-infographic/references/mascot-background-rules.md), [single-image rules](pea-newsletter-infographic/references/single-image-layout.md), and [QA](pea-newsletter-infographic/references/quality-checklist.md).
 
-The existing reference PNG assets and exact logo are preserved; v2.4.3 added the approved reference and mascot cutout without replacing protected source assets.
+Layout references use the current JPG/JPEG assets; `original-newsletter-reference.png` is no longer required. The exact logo remains unchanged. v2.4.3 added the approved photo-grid reference and mascot cutout.

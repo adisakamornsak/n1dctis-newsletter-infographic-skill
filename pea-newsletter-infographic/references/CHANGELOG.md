@@ -1,5 +1,15 @@
 # Changelog
 
+## v2.5.1 - 2026-11-17
+- Add `layout-01-chiang-mai-classic.jpg`, a 1440x2560 illustrative composition guide with sample copy, flexible image slots, the original logo and a generated abstract purple/gold background. Compose text with verified Thai-capable Prompt because Google Sans is unavailable.
+- Vary backgrounds by story; no fixed Doi Suthep, mountain, temple or landmark requirement. Synchronize both prompts and QA.
+
+## v2.5.0 - 2026-11-17
+- Update packaging to the current JPG/JPEG layout references and remove the retired original newsletter reference from required assets.
+- Add optional `sub_header` for the department line immediately below the unchanged top header. Omitted or blank values retain the original information systems and cybersecurity department name.
+- Preserve the resolved wording exactly; synchronize both Thai prompts, intake form, content contract and QA.
+- Add `--sub-header` to copy auditing, preserving default behavior for existing callers.
+
 ## v2.4.5 - 2026-11-17
 - Prefer Thai-capable Google Sans and permit verified Thai-capable Google Prompt as a disclosed fallback when Google Sans is unavailable.
 - Recheck typography and line breaks after fallback; report a blocker if neither font is available.

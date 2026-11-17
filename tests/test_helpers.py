@@ -35,6 +35,39 @@ class CopyTests(unittest.TestCase):
         source = '26 - 30 / 2569 / 5G / 99.9%'
         self.assertEqual(copy.audit(source, self.final(source)), [])
 
+    def test_custom_department_replaces_default_requirement(self):
+        department = 'แผนกบริการลูกค้า'
+        final = self.final('2569').replace(copy.DEFAULT_SUB_HEADER, department)
+        self.assertEqual(copy.audit('2569', final, sub_header=department), [])
+        self.assertTrue(copy.audit('2569', final))
+        self.assertTrue(copy.audit('2569', self.final('2569'), sub_header=department))
+        self.assertTrue(copy.audit('2569', final + department, sub_header=department))
+        self.assertTrue(copy.audit('2570', final, sub_header=department))
+
+    def test_blank_department_keeps_default_and_custom_value_is_trimmed(self):
+        for value in (None, '', '  \t\n'):
+            with self.subTest(value=value):
+                self.assertEqual(copy.audit('', self.final(''), sub_header=value), [])
+        department = 'แผนกบริการลูกค้า'
+        final = self.final('').replace(copy.DEFAULT_SUB_HEADER, department)
+        self.assertEqual(copy.audit('', final, sub_header='  ' + department + '  '), [])
+        self.assertEqual(copy.REQUIRED[1], copy.DEFAULT_SUB_HEADER)
+
+    def test_cli_custom_department_and_blank_default(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            source, final = root/'source.txt', root/'final.txt'
+            source.write_text('2569', encoding='utf-8')
+            command = [sys.executable, str(SKILL/'scripts/audit_copy.py'),
+                       '--source', str(source), '--final', str(final)]
+            department = 'แผนกบริการลูกค้า'
+            final.write_text(self.final('2569').replace(copy.DEFAULT_SUB_HEADER, department), encoding='utf-8')
+            self.assertEqual(subprocess.run(command + ['--sub-header', department], capture_output=True).returncode, 0)
+            self.assertEqual(subprocess.run(command, capture_output=True).returncode, 1)
+            final.write_text(self.final('2569'), encoding='utf-8')
+            self.assertEqual(subprocess.run(command + ['--sub-header', '  '], capture_output=True).returncode, 0)
+            self.assertEqual(subprocess.run(command + ['--sub-header', department], capture_output=True).returncode, 1)
+
     def test_changed_number_is_reported(self):
         self.assertTrue(copy.audit('2569', self.final('2570')))
 

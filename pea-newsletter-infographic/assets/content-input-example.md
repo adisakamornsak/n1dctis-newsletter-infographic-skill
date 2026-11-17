@@ -7,6 +7,7 @@
 - ประเด็นสำคัญ:
 - ภาพทั้งหมดที่แนบ:
 - ภาพหลัก (ถ้ามี):
+- sub_header: (ชื่อแผนกใต้ Header; ไม่ระบุหรือเว้นว่างใช้ “แผนกระบบสารสนเทศและความปลอดภัยไซเบอร์”)
 - layout_choice: auto | 01 | 02 | 03 | 04 | 05
 - mascot_usage: auto | include | omit
 - background_direction: auto | cyber | digital | field | awareness | festive | neutral | custom

@@ -8,9 +8,9 @@ import sys
 import zipfile
 
 ASSET_NAMES = (
-    'approved-layout-reference.png', 'original-newsletter-reference.png',
-    'layout-02-digital-operations.png', 'layout-03-cyber-shield.png',
-    'layout-04-enterprise-analytics.png', 'layout-05-cyber-ops-infrastructure.png',
+    'approved-layout-reference.jpg', 'layout-01-chiang-mai-classic.jpg',
+    'layout-02-digital-operations.jpg', 'layout-03-cyber-shield.jpg',
+    'layout-04-enterprise-analytics.jpg', 'layout-05-cyber-ops-infrastructure.jpg',
     'pea-logo-exact-original.png',
 )
 REQUIRED = (

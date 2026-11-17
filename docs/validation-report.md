@@ -1,14 +1,24 @@
-# Validation report — v2.4.4, 2026-11-17
+# Validation report — v2.5.1, 2026-11-17
 
 ## Results
 
-- `python3 -m unittest discover -s tests -v`: **49 tests passed**, no failures, errors or skips.
-- Skill `quick_validate.py`: PASS.
-- `python3 tools/package_skill.py --output dist/skill.zip --force`: PASS, including archive checksum.
+- `python3 -m unittest discover -s tests -v`: **53 tests passed**, no failures, errors or skips.
+- Skill `quick_validate.py`: unavailable in the current Python environments because PyYAML is not installed. The packaging tests still exercise frontmatter name/description checks.
+- `python3 tools/package_skill.py --output dist/skill.zip`: PASS, including archive checksum. Required layout references now use the current `.jpg` assets including layout 01; the retired `original-newsletter-reference.png` is no longer required. Existing logo and image source bytes are preserved.
 - Repository and bundled Thai prompt versions/content: synchronized.
 - `git diff --check`: PASS.
 
-## Repair scope
+## Current change
+
+The department line below the top header now accepts optional `sub_header`.
+Omitted, empty and whitespace-only values retain the original default; custom
+values are trimmed at the edges and preserved exactly. Both short prompts,
+intake, content rules and QA use this contract. Copy auditing accepts
+`--sub-header` and its callable API accepts `sub_header`. Tests cover custom
+values, missing/duplicated copy, numeric preservation, blank defaults and CLI
+behavior. Layout 01 is an illustrative template, not event evidence; its final JPEG was rendered and visually reviewed.
+
+## Earlier repair scope
 
 The v2.4.3 baseline ran 54 tests with 21 failures and 21 errors. The old suite
 called missing helper functions and still required PNG, version v2.3.0,
@@ -36,7 +46,7 @@ coverage. No failing test is skipped or marked as an expected failure.
   exclusion, and explicit overwrite rules.
 - Instruction contracts: fixed JPEG delivery, all images, capacity handling,
   focal cropping versus protected logo rules, five layouts, real reference
-  links, current synchronized prompt, fixed copy and explicit-only motto gate.
+  links, current synchronized prompt, protected copy and explicit-only motto gate.
 - Approved assets: final reference passes the JPEG validator; mascot asset has
   both transparent and opaque alpha values.
 
